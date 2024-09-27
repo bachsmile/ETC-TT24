@@ -1,7 +1,7 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
@@ -10,27 +10,25 @@ export default new Vuex.Store({
   },
   getters: {
     getData: (state) => {
-      return state.data;
+      return state.data
     },
   },
   mutations: {
     setData(state, payload) {
-      state.data = payload;
+      state.data = payload
     },
     setData1(state, payload) {
-      state.data1 = payload;
+      state.data1 = payload
     },
   },
   actions: {
     updateMTData({ commit }, payload) {
       if (payload === 1) {
-        commit("setData", payload);
+        commit('setData', payload)
+      } else {
+        commit('setData1', payload)
       }
-      else{
-        commit("setData1", payload);
-      }
-
     },
   },
   modules: {},
-});
+})

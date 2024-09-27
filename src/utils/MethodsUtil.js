@@ -1,4 +1,4 @@
-import axiosIns from "../plugins/Axios";
+import axiosIns from '../plugins/Axios'
 
 export default class MethodsUtil {
   /**
@@ -8,10 +8,10 @@ export default class MethodsUtil {
    * @param {any} payload =>  Dữ liệu đính kèm api
    * @return {object}
    */
-  static requestApiCustom = async (url = "", method = "GET", payload, arg) => {
-    if (url === undefined) return;
-    const data = method === "GET" ? null : payload || null;
-    const params = method === "GET" ? payload : null;
+  static requestApiCustom = async (url = '', method = 'GET', payload, arg) => {
+    if (url === undefined) return
+    const data = method === 'GET' ? null : payload || null
+    const params = method === 'GET' ? payload : null
     return await axiosIns({
       url,
       method,
@@ -20,16 +20,16 @@ export default class MethodsUtil {
       ...arg,
     })
       .then((res) => {
-        return Promise.resolve(res);
+        return Promise.resolve(res)
       })
       .catch((err) => {
-        return Promise.reject(err);
-      });
-  };
+        return Promise.reject(err)
+      })
+  }
   static setLocalStorage = (key, value) => {
-    localStorage.setItem('CLS'+ key, value);
-  };
+    localStorage.setItem('CLS' + key, value)
+  }
   static getLocalStorage = (key) => {
-    return localStorage.getItem('CLS'+ key);
-  };
+    return localStorage.getItem('CLS' + key)
+  }
 }
