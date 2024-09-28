@@ -8,13 +8,6 @@ module.exports = {
     parser: 'babel-eslint',
   },
   rules: {
-    'vue/max-attributes-per-line': [
-      'error',
-      {
-        singleline: 3, // Số thuộc tính tối đa trên một dòng cho thẻ đơn
-        multiline: { max: 1, allowFirstLine: true }, // Số thuộc tính tối đa cho thẻ nhiều dòng
-      },
-    ],
     'vue/no-use-v-if-with-v-for': 'off',
     'no-plusplus': 1,
     semi: 'off',

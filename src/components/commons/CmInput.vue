@@ -1,11 +1,11 @@
 <template>
   <div class="containerInput" :style="{ width: typeUi === 1 ? '100%' : '50%' }">
     <div v-if="inputType === 'checkbox'" class="checkboxContainer">
-      <input :id="name" type="checkbox" v-model="inputValue" @change="updateValue" />
+      <input :id="name" v-model="inputValue" type="checkbox" @change="updateValue" />
       <label :for="name">{{ lable }}</label>
     </div>
 
-    <div class="a" v-else>
+    <div v-else class="a">
       <label :for="name">{{ lable }}*</label>
       <div class="wapperInput">
         <img v-if="activeImg" :src="require('../../assets/vietnamICon.jpg')" alt="" />
@@ -96,7 +96,7 @@ export default {
   line-height: 20px;
 }
 .containerInput input {
-  padding: 10px 14px;
+  padding: 10px 12px;
   border: 1px solid #d0d5dd;
   box-shadow: 0px 1px 2px 0px #1018280d;
   border-radius: 8px;
@@ -112,13 +112,13 @@ export default {
   position: relative;
   width: 100%;
   max-height: 100%;
-  height: 40px;
+  height: 38px;
 }
 
 .wapperInput img {
   position: absolute;
   z-index: 2;
-  height: 20px;
+  height: 18px;
   width: 8%;
   left: 0;
   bottom: 50%;
@@ -150,11 +150,12 @@ export default {
   display: flex;
   align-items: start;
   gap: 8px;
+  margin-bottom: 10px;
 }
 
 .checkboxContainer label {
   color: #344054;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   line-height: 20px;
 }

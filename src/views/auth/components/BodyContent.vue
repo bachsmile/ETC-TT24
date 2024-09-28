@@ -41,11 +41,11 @@ export default {
 form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .inputGroup {
   display: flex;
-  gap: 10px;
+  gap: 9px;
 }
 </style>
