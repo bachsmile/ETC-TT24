@@ -1,24 +1,16 @@
 <template>
-  <div class="containerInput" :style="{ width: typeUi === 1 ? '100%' : '50%' }">
-    <div v-if="inputType === 'checkbox'" class="checkboxContainer">
-      <input :id="name" v-model="inputValue" type="checkbox" @change="updateValue" />
-      <label :for="name">{{ lable }}</label>
-    </div>
-
-    <div v-else class="a">
-      <label :for="name">{{ lable }}*</label>
+  <div class="containerInput">
+    <div class="a">
+      <label :for="name">{{ label }}*</label>
       <div class="wapperInput">
-        <img v-if="activeImg" :src="require('../../assets/vietnamICon.jpg')" alt="" />
-
+        <img v-if="activeImg" :src="require('../assets/vietnamICon.jpg')" alt="" />
         <input
           :id="name"
           v-model="inputValue"
-          :style="{ padding: activeImg ? '10px 14px 10px 46px' : '10px 14px' }"
-          :placeholder="lable"
+          :class="activeImg ? 'activeImg' : ''"
+          :placeholder="label"
           :type="computedInputType"
-          @input="updateValue"
         />
-
         <div v-if="showContent" @click="toggleShowContent">
           <i class="fa-regular" :class="isVisible ? 'fa-eye-slash' : 'fa-eye'"></i>
         </div>
@@ -38,7 +30,7 @@ export default {
       type: String,
       required: true,
     },
-    lable: {
+    label: {
       type: String,
       required: true,
     },
@@ -70,9 +62,16 @@ export default {
       return this.isVisible ? 'text' : this.inputType;
     },
   },
+  watch: {
+    modelValue: {
+      immediate: true,
+      handler(newValue) {
+        this.inputValue = newValue;
+      },
+    },
+  },
   methods: {
-    updateValue(event) {
-      this.inputValue = event.target.value;
+    emitValue() {
       this.$emit('input', this.inputValue);
     },
     toggleShowContent() {
@@ -89,6 +88,8 @@ export default {
   gap: 10px;
   color: #344054;
   font-size: 14px;
+  height: max-content;
+  width: 100%;
 }
 .containerInput label {
   font-weight: 500;
@@ -101,7 +102,6 @@ export default {
   box-shadow: 0px 1px 2px 0px #1018280d;
   border-radius: 8px;
   width: 100%;
-  height: 100%;
 }
 
 .containerInput input:focus {
@@ -146,23 +146,7 @@ export default {
   gap: 8px;
 }
 
-.checkboxContainer {
-  display: flex;
-  align-items: start;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-
-.checkboxContainer label {
-  color: #344054;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 20px;
-}
-
-.checkboxContainer input[type='checkbox'] {
-  margin-top: 5px;
-  margin-right: 8px;
-  width: max-content;
+.activeImg {
+  padding: 10px 14px 10px 46px !important;
 }
 </style>

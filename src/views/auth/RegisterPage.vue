@@ -1,13 +1,13 @@
 <template>
-  <div class="container">
+  <div class="container flex justify-end items-center">
     <div>
       <img class="bg" src="../../assets/bg.jpg" alt="" />
       <img class="logo" src="../../assets/logo.svg" alt="" />
     </div>
 
     <div class="content">
-      <HeadContent />
-      <BodyContent />
+      <RegHeader />
+      <RegBody />
 
       <div class="navigate">
         <p>Bạn đã có tài khoản?</p>
@@ -18,13 +18,13 @@
 </template>
 
 <script>
-import HeadContent from './components/HeadContent.vue';
-import BodyContent from './components/BodyContent.vue';
+import RegHeader from './components/RegHeader.vue';
+import RegBody from './components/RegBody.vue';
 
 export default {
   components: {
-    BodyContent,
-    HeadContent,
+    RegHeader,
+    RegBody,
   },
 };
 </script>
@@ -34,7 +34,7 @@ export default {
   position: relative;
   display: flex;
   justify-content: end;
-  padding: 0.3% 5%;
+  padding: 1% 5%;
   gap: 8px;
   width: 100%;
   height: 100vh;
@@ -65,7 +65,7 @@ export default {
   border-radius: 8px;
   height: max-content;
   width: 420px;
-  padding: 30px;
+  padding: 20px 32px;
   box-shadow: 14px -3px 36px #02020208, 4px 3px 36px #00000078;
 }
 
@@ -73,7 +73,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: 13px;
   gap: 5px;
 }

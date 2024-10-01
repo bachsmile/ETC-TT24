@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <router-view></router-view>
-  </div>
+  <router-view></router-view>
 </template>
 
 <script>
@@ -11,8 +9,9 @@ export default {
 </script>
 
 <style scoped>
-div {
-  max-width: 100vw;
-  min-height: 100vh;
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 </style>

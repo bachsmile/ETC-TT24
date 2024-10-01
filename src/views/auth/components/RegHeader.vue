@@ -1,6 +1,8 @@
 <template>
   <div class="title">
-    <img class="logo" src="../../../assets/logo.jpg" alt="" />
+    <router-link to="/">
+      <img class="logo" src="../../../assets/logo.jpg" alt="" />
+    </router-link>
     <h1>Đăng ký</h1>
     <p>Nhanh chóng và dễ dàng</p>
   </div>
@@ -16,7 +18,7 @@ export default {};
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 16px;
+  gap: 13px;
   margin-bottom: 16px;
 }
 
