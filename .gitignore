@@ -9,7 +9,6 @@
 main.js
 src/**/*.js
 !src/karma.conf.js
-!src/MockupApi.js
 *.js.map
 # extraResources/*
 
