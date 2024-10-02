@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProductDetail from '../views/product/ProductDetail.vue'
 import learningContent from '../views/LearningContent/learningContent.vue'
-
+import RegisterView from '../views/Register/RegisterView.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -41,6 +41,12 @@ const routes = [
     path: '/learning',
     name:'learningCource',
     component: learningContent
+  },
+
+  {
+    path: '/register',
+    name:'RegisterView',
+    component: RegisterView
   }
 
 ]
