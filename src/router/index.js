@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProductDetail from '../views/product/ProductDetail.vue'
+import learningContent from '../views/LearningContent/learningContent.vue'
 
 Vue.use(VueRouter)
 
@@ -36,6 +37,11 @@ const routes = [
       }
     ]
   },
+  {
+    path: '/learning',
+    name:'learningCource',
+    component: learningContent
+  }
 
 ]
 
