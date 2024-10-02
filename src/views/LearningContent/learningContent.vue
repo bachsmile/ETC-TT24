@@ -254,8 +254,7 @@
             <label for="to-date">Đến ngày</label>
             <div class="date-picker-container">
               <input type="text" id="to-date" placeholder="hh:mm DD/MM/YYYY" />
-              <span class="date-icon"
-                ><svg
+              <span class="date-icon"><svg
                   width="18"
                   height="20"
                   viewBox="0 0 18 20"
