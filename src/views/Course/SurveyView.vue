@@ -206,13 +206,13 @@ export default {
           return 'Kỳ khảo sát đang diễn ra';
       }
     },
-    totalPages() {
-      return Math.ceil(this.surveys.length / this.pageSize); // Assuming 'pageSize' is 9
-    },
-    paginatedSurveys() {
-      const start = (this.currentPage - 1) * this.pageSize;
-      return this.surveys.slice(start, start + this.pageSize);
-    },
+    // totalPages() {
+    //   return Math.ceil(this.surveys.length / this.pageSize); // Assuming 'pageSize' is 9
+    // },
+    // paginatedSurveys() {
+    //   const start = (this.currentPage - 1) * this.pageSize;
+    //   return this.surveys.slice(start, start + this.pageSize);
+    // },
   },
   methods: {
     async fetchSurveys() {
