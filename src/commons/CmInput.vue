@@ -1,21 +1,23 @@
 <template>
   <div class="containerInput">
     <div class="a">
-      <label :for="name">{{ label }}*</label>
+      <label :for="name">{{ label }}{{ required ? '*' : '' }}</label>
       <div class="wapperInput">
         <img v-if="activeImg" :src="require('../assets/vietnamICon.jpg')" alt="" />
         <input
           :id="name"
           v-model="inputValue"
-          :class="activeImg ? 'activeImg' : ''"
+          :class="{ activeImg, error: !!error }"
           :placeholder="label"
           :type="computedInputType"
+          @input="emitValue"
         />
         <div v-if="showContent" @click="toggleShowContent">
           <i class="fa-regular" :class="isVisible ? 'fa-eye-slash' : 'fa-eye'"></i>
         </div>
       </div>
     </div>
+    <span v-if="error" class="error-message">{{ error }}</span>
   </div>
 </template>
 
@@ -49,6 +51,14 @@ export default {
     showContent: {
       type: Boolean,
       default: false,
+    },
+    required: {
+      type: Boolean,
+      default: false,
+    },
+    error: {
+      type: String,
+      default: '',
     },
   },
   data() {
@@ -148,5 +158,15 @@ export default {
 
 .activeImg {
   padding: 10px 14px 10px 46px !important;
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+input.error {
+  border-color: #dc2626;
 }
 </style>
