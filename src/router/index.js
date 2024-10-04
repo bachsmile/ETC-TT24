@@ -2,8 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProductDetail from '../views/product/ProductDetail.vue'
-import learningContent from '../views/LearningContent/learningContent.vue'
-import RegisterView from '../views/Register/RegisterView.vue'
+import learningContent from '../components/learningContent.vue'
+import RegisterView from '../components/RegisterView.vue'
 Vue.use(VueRouter)
 
 const routes = [

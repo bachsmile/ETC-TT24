@@ -4,26 +4,53 @@
     <div class="left">
       <div class="left-content">
         <div class="logo">
-          <img src="D:\ETC-TT24\src\views\img\Untitled.png" alt="logo_CLS" />
+          <img src="../views/img/Untitled.png" alt="logo_CLS" />
         </div>
       </div>
-      <div class="application"></div>
-      <div class="label-app">Chương trình đào tạo của chúng tôi</div>
-      <div class="icon-app">
-        <svg
-          width="8"
-          height="12"
-          viewBox="0 0 8 12"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M0.910826 0.410765C1.23626 0.0853278 1.7639 0.0853278 2.08934 0.410765L7.08934 5.41076C7.41477 5.7362 7.41477 6.26384 7.08934 6.58928L2.08934 11.5893C1.7639 11.9147 1.23626 11.9147 0.910826 11.5893C0.585389 11.2638 0.585389 10.7362 0.910826 10.4108L5.32157 6.00002L0.910826 1.58928C0.585389 1.26384 0.585389 0.736202 0.910826 0.410765Z"
-            fill="#344054"
-          />
-        </svg>
+      <div class="application">
+        <div class="head-icon">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.66675 16H25.3334V23.6667C25.3334 25.3235 23.9903 26.6667 22.3334 26.6667H9.66675C8.00989 26.6667 6.66675 25.3235 6.66675 23.6667V16Z"
+              fill="#36BFFA"
+            />
+            <rect
+              x="26.6667"
+              y="12.267"
+              width="2.66667"
+              height="8"
+              rx="1.33333"
+              fill="#026AA2"
+            />
+            <path
+              d="M16.0003 21.8536C15.7663 21.8535 15.5364 21.792 15.3336 21.6752L3.33364 14.7455C2.69578 14.3771 2.47736 13.5613 2.84578 12.9234C2.9628 12.7209 3.13105 12.5526 3.33364 12.4356L15.3336 5.51111C15.7465 5.27413 16.2541 5.27413 16.667 5.51111L28.667 12.4356C29.3048 12.804 29.5233 13.6198 29.1548 14.2576C29.0378 14.4602 28.8696 14.6285 28.667 14.7455L16.667 21.6752C16.4642 21.792 16.2343 21.8535 16.0003 21.8536Z"
+              fill="#0086C9"
+            />
+          </svg>
+        </div>
+        <div class="label-app">Chương trình đào tạo của chúng tôi</div>
+        <div class="icon-app">
+          <svg
+            width="8"
+            height="12"
+            viewBox="0 0 8 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0.910826 0.410765C1.23626 0.0853278 1.7639 0.0853278 2.08934 0.410765L7.08934 5.41076C7.41477 5.7362 7.41477 6.26384 7.08934 6.58928L2.08934 11.5893C1.7639 11.9147 1.23626 11.9147 0.910826 11.5893C0.585389 11.2638 0.585389 10.7362 0.910826 10.4108L5.32157 6.00002L0.910826 1.58928C0.585389 1.26384 0.585389 0.736202 0.910826 0.410765Z"
+              fill="#344054"
+            />
+          </svg>
+        </div>
       </div>
       <div class="ctdt">
         <div class="ctdt-List">
@@ -35,6 +62,32 @@
         </div>
       </div>
       <div class="application">
+        <div class="head-icon">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13.3334 2.66669H4.00008C3.2637 2.66669 2.66675 3.26364 2.66675 4.00002V13.3334C2.66675 14.0697 3.2637 14.6667 4.00008 14.6667H13.3334C14.0698 14.6667 14.6667 14.0697 14.6667 13.3334V4.00002C14.6667 3.26364 14.0698 2.66669 13.3334 2.66669Z"
+              fill="#C4320A"
+            />
+            <path
+              d="M13.3334 17.3333H4.00008C3.2637 17.3333 2.66675 17.9303 2.66675 18.6666V28C2.66675 28.7364 3.2637 29.3333 4.00008 29.3333H13.3334C14.0698 29.3333 14.6667 28.7364 14.6667 28V18.6666C14.6667 17.9303 14.0698 17.3333 13.3334 17.3333Z"
+              fill="#FD853A"
+            />
+            <path
+              d="M27.9999 2.66669H18.6666C17.9302 2.66669 17.3333 3.26364 17.3333 4.00002V13.3334C17.3333 14.0697 17.9302 14.6667 18.6666 14.6667H27.9999C28.7363 14.6667 29.3333 14.0697 29.3333 13.3334V4.00002C29.3333 3.26364 28.7363 2.66669 27.9999 2.66669Z"
+              fill="#FD853A"
+            />
+            <path
+              d="M27.9999 17.3333H18.6666C17.9302 17.3333 17.3333 17.9303 17.3333 18.6666V28C17.3333 28.7364 17.9302 29.3333 18.6666 29.3333H27.9999C28.7363 29.3333 29.3333 28.7364 29.3333 28V18.6666C29.3333 17.9303 28.7363 17.3333 27.9999 17.3333Z"
+              fill="#FD853A"
+            />
+          </svg>
+        </div>
         <div class="label-app">Ứng Dụng</div>
         <div class="icon-app">
           <svg
@@ -54,6 +107,29 @@
         </div>
       </div>
       <div class="application">
+        <div class="head-icon">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24.3334 18.6667C24.8857 18.6667 25.3377 18.2181 25.2924 17.6677C25.0898 15.2052 24.1429 12.8877 22.5997 11.1242C20.8494 9.12381 18.4754 8 16.0001 8C13.5247 8 11.1508 9.12381 9.40042 11.1242C7.85731 12.8877 6.91034 15.2052 6.70774 17.6677C6.66245 18.2181 7.11446 18.6667 7.66675 18.6667L16.0001 18.6667H24.3334Z"
+              fill="#7CD4FD"
+            />
+            <circle cx="16.0001" cy="5.33333" r="5.33333" fill="#0BA5EC" />
+            <path
+              d="M16 29.3333V14.6667L10 13.3333L5.21693 12.2704C4.59242 12.1316 4 12.6069 4 13.2466V25.8134C4 26.3049 4.35214 26.723 4.83705 26.8036C7.44609 27.2369 15.2988 28.5932 16 29.3333Z"
+              fill="#026AA2"
+            />
+            <path
+              d="M16 29.3333V14.6667L26.7831 12.2704C27.4076 12.1316 28 12.6069 28 13.2466V25.8134C28 26.3049 27.6479 26.723 27.163 26.8036C24.5539 27.2369 16.7012 28.5932 16 29.3333Z"
+              fill="#0BA5EC"
+            />
+          </svg>
+        </div>
         <div class="label-app">Quản Lý Nội Dung</div>
         <div class="icon-app">
           <svg
@@ -73,6 +149,28 @@
         </div>
       </div>
       <div class="application">
+        <div class="head-icon">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16 16V2.66669C23.364 2.66669 29.3333 8.63602 29.3333 16H16Z"
+              fill="#EE46BC"
+            />
+            <path
+              d="M16 16L22.6667 27.5467C24.6926 26.3754 26.375 24.6921 27.5451 22.6654C28.7152 20.6388 29.3319 18.3402 29.3333 16H16Z"
+              fill="#F670C7"
+            />
+            <path
+              d="M22.6679 27.5467L16.0012 16V2.66669C8.63721 2.66935 2.66921 8.64002 2.67188 16.004C2.67454 23.368 8.64521 29.336 16.0105 29.3334C18.3477 29.3324 20.6435 28.7172 22.6679 27.5494L22.6719 27.5427L22.6679 27.5467Z"
+              fill="#C11574"
+            />
+          </svg>
+        </div>
         <div class="label-app">Quản Lý Báo Cáo</div>
         <div class="icon-app">
           <svg
@@ -92,6 +190,28 @@
         </div>
       </div>
       <div class="application">
+        <div class="head-icon">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.99992 30.6666H2.66659C2.31296 30.6666 1.97382 30.5262 1.72378 30.2761C1.47373 30.0261 1.33325 29.6869 1.33325 29.3333V18.6666C1.33325 18.313 1.47373 17.9739 1.72378 17.7238C1.97382 17.4738 2.31296 17.3333 2.66659 17.3333H7.99992C8.35354 17.3333 8.69268 17.4738 8.94273 17.7238C9.19278 17.9739 9.33325 18.313 9.33325 18.6666V29.3333C9.33325 29.6869 9.19278 30.0261 8.94273 30.2761C8.69268 30.5262 8.35354 30.6666 7.99992 30.6666Z"
+              fill="#32D583"
+            />
+            <path
+              d="M18.6667 30.6666H13.3333C12.9797 30.6666 12.6406 30.5262 12.3905 30.2761C12.1405 30.0261 12 29.6869 12 29.3333V2.66665C12 2.31302 12.1405 1.97389 12.3905 1.72384C12.6406 1.47379 12.9797 1.33331 13.3333 1.33331H18.6667C19.0203 1.33331 19.3594 1.47379 19.6095 1.72384C19.8595 1.97389 20 2.31302 20 2.66665V29.3333C20 29.6869 19.8595 30.0261 19.6095 30.2761C19.3594 30.5262 19.0203 30.6666 18.6667 30.6666Z"
+              fill="#027A48"
+            />
+            <path
+              d="M29.3334 30.6667H24.0001C23.6465 30.6667 23.3073 30.5262 23.0573 30.2761C22.8072 30.0261 22.6667 29.687 22.6667 29.3333V13.3333C22.6667 12.9797 22.8072 12.6406 23.0573 12.3905C23.3073 12.1405 23.6465 12 24.0001 12H29.3334C29.687 12 30.0262 12.1405 30.2762 12.3905C30.5263 12.6406 30.6667 12.9797 30.6667 13.3333V29.3333C30.6667 29.687 30.5263 30.0261 30.2762 30.2761C30.0262 30.5262 29.687 30.6667 29.3334 30.6667Z"
+              fill="#6CE9A6"
+            />
+          </svg>
+        </div>
         <div class="label-app">Quản Lý Hệ Thống</div>
         <div class="icon-app">
           <svg
@@ -111,6 +231,39 @@
         </div>
       </div>
       <div class="application">
+        <div class="head-icon">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10.1256 11.8134C10.1651 11.6652 10.2335 11.5263 10.3269 11.4047C10.4203 11.283 10.5368 11.181 10.6698 11.1045L17.8208 6.97588C18.0887 6.82438 18.4057 6.78484 18.7027 6.86586C18.9997 6.94688 19.2527 7.14191 19.4066 7.40851C19.5605 7.67511 19.6029 7.99171 19.5246 8.28942C19.4463 8.58713 19.2535 8.84186 18.9883 8.99819L11.8373 13.1268C11.6373 13.2422 11.4076 13.2958 11.1772 13.2807C10.9467 13.2656 10.726 13.1825 10.5428 13.0419C10.3596 12.9013 10.2221 12.7096 10.1479 12.4909C10.0736 12.2723 10.0659 12.0365 10.1256 11.8134Z"
+              fill="#53B1FD"
+            />
+            <path
+              d="M19.5331 22.3134C19.4936 22.1652 19.4251 22.0263 19.3318 21.9047C19.2384 21.783 19.1219 21.681 18.9889 21.6045L11.8379 17.4759C11.5699 17.3244 11.253 17.2848 10.956 17.3659C10.659 17.4469 10.406 17.6419 10.2521 17.9085C10.0982 18.1751 10.0558 18.4917 10.1341 18.7894C10.2124 19.0871 10.4052 19.3419 10.6703 19.4982L17.8213 23.6268C18.0213 23.7422 18.2511 23.7958 18.4815 23.7807C18.7119 23.7656 18.9327 23.6825 19.1159 23.5419C19.2991 23.4013 19.4366 23.2096 19.5108 22.9909C19.5851 22.7723 19.5928 22.5365 19.5331 22.3134Z"
+              fill="#53B1FD"
+            />
+            <circle cx="8.66667" cy="15.3334" r="4.66667" fill="#175CD3" />
+            <ellipse
+              cx="21.9999"
+              cy="5.99998"
+              rx="4.66667"
+              ry="4.66667"
+              fill="#175CD3"
+            />
+            <ellipse
+              cx="21.9999"
+              cy="24.6667"
+              rx="4.66667"
+              ry="4.66667"
+              fill="#175CD3"
+            />
+          </svg>
+        </div>
         <div class="label-app">Quản Lý Chia Sẻ</div>
         <div class="icon-app">
           <svg
@@ -205,7 +358,7 @@
             </div>
           </div>
           <div class="avatar">
-            <img src="../img/Untitled.png" alt="" />
+            <img src="../views/img/Untitled.png" alt="" />
           </div>
         </div>
       </div>
@@ -223,14 +376,9 @@
               <!-- Add more course options here -->
             </select>
           </div>
-          <div class="filter-group">
-            <label for="from-date">Từ ngày</label>
+          <!-- <label for="from-date">Từ ngày</label>
             <div class="date-picker-container">
-              <input
-                type="text"
-                id="from-date"
-                placeholder="hh:mm DD/MM/YYYY"
-              />
+              <input type="text" id="from-date" placeholder="DD/MM/YYYY" />
               <span class="date-icon"
                 ><svg
                   width="18"
@@ -248,30 +396,9 @@
                 </svg>
               </span>
               <input type="date" id="from-date-hidden" style="display: none" />
-            </div>
-          </div>
-          <div class="filter-group">
-            <label for="to-date">Đến ngày</label>
-            <div class="date-picker-container">
-              <input type="text" id="to-date" placeholder="hh:mm DD/MM/YYYY" />
-              <span class="date-icon"><svg
-                  width="18"
-                  height="20"
-                  viewBox="0 0 18 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M5.66675 0.833374C6.12699 0.833374 6.50008 1.20647 6.50008 1.66671V2.50004H11.5001V1.66671C11.5001 1.20647 11.8732 0.833374 12.3334 0.833374C12.7937 0.833374 13.1667 1.20647 13.1667 1.66671V2.50004H14.8334C16.2141 2.50004 17.3334 3.61933 17.3334 5.00004V16.6667C17.3334 18.0474 16.2141 19.1667 14.8334 19.1667H3.16675C1.78604 19.1667 0.666748 18.0474 0.666748 16.6667V5.00004C0.666748 3.61933 1.78604 2.50004 3.16675 2.50004H4.83341V1.66671C4.83341 1.20647 5.20651 0.833374 5.66675 0.833374ZM4.83341 4.16671H3.16675C2.70651 4.16671 2.33341 4.5398 2.33341 5.00004V7.50004H15.6667V5.00004C15.6667 4.5398 15.2937 4.16671 14.8334 4.16671H13.1667V5.00004C13.1667 5.46028 12.7937 5.83337 12.3334 5.83337C11.8732 5.83337 11.5001 5.46028 11.5001 5.00004V4.16671H6.50008V5.00004C6.50008 5.46028 6.12699 5.83337 5.66675 5.83337C5.20651 5.83337 4.83341 5.46028 4.83341 5.00004V4.16671ZM15.6667 9.16671H2.33341V16.6667C2.33341 17.1269 2.70651 17.5 3.16675 17.5H14.8334C15.2937 17.5 15.6667 17.1269 15.6667 16.6667V9.16671Z"
-                    fill="#344054"
-                  />
-                </svg>
-              </span>
-              <input type="date" id="to-date-hidden" style="display: none" />
-            </div>
-          </div>
+            </div> -->
+          <CmCelendar propName="Từ Ngày" />
+          <CmCelendar propName="Đến Ngày" />
         </div>
         <!--search and hide-button  -->
         <div class="filter-search">
@@ -292,7 +419,7 @@
             </svg>
             <input type="text" placeholder="Tìm kiếm" />
           </div>
-          <div class="btn">
+          <div class="btn-hide">
             <svg
               class="hide-icon"
               width="18"
@@ -308,36 +435,51 @@
                 fill="#344054"
               />
             </svg>
-            <a href="" class="button-hide">Ẩn lọc</a>
+            <!-- a href="" class="button-hide">Ẩn lọc</a> -->
+            <button class="button-hide">Ẩn lọc</button>
           </div>
         </div>
       </div>
       <!-- khóa học chính  -->
       <div class="main-content">
-        <div class="parents-card">
-          <div class="left-card">
-            <div class="card">
+        <div class="left-card">
+          <div>
+            <div
+              v-for="(course, index) in courseList"
+              v-if="index % 2 === 0"
+              :key="course.id_Course"
+              class="card"              
+            >
               <div class="title">
-                <p class="content-name">Tên nội dung</p>
-                <p class="course-name">Tên khóa học</p>
+                <p class="course-name">{{ course.nameCourse }}</p>
+                <p class="content-name">{{ course.description }}</p>
               </div>
               <div class="confirm">
                 <div class="loading-percentage">
-                  loading-percentage percentage
+                  <!-- Nếu có loading percentage, có thể hiển thị ở đây -->
+                  loading-percentage
                 </div>
                 <button class="begin-button">Bắt đầu</button>
               </div>
             </div>
           </div>
-          <div class="right-card">
-            <div class="card">
+        </div>
+        <div class="right-card">
+          <div>
+            <div
+              v-for="(course, index) in courseList"
+              v-if="index % 2 !== 0"
+              :key="course.id_Course"
+              class="card"
+            >
               <div class="title">
-                <p class="content-name">Tên nội dung</p>
-                <p class="course-name">Tên khóa học</p>
+                <p class="course-name">{{ course.nameCourse }}</p>
+                <p class="content-name">{{ course.description }}</p>
               </div>
               <div class="confirm">
                 <div class="loading-percentage">
-                  loading-percentage percentage
+                  <!-- Nếu có loading percentage, có thể hiển thị ở đây -->
+                  loading-percentage
                 </div>
                 <button class="begin-button">Bắt đầu</button>
               </div>
@@ -375,30 +517,6 @@
           <div class="number-around">
             <div class="number">2</div>
           </div>
-          <div class="number-around">
-            <div class="number">3</div>
-          </div>
-          <div class="number-around">
-            <div class="number">4</div>
-          </div>
-          <div class="number-around">
-            <div class="number">5</div>
-          </div>
-          <div class="number-around">
-            <div class="number">6</div>
-          </div>
-          <div class="number-around">
-            <div class="number">7</div>
-          </div>
-          <div class="number-around">
-            <div class="number">8</div>
-          </div>
-          <div class="number-around">
-            <div class="number">9</div>
-          </div>
-          <div class="number-around">
-            <div class="number">10</div>
-          </div>
         </div>
         <div class="button-right">
           <button>
@@ -425,7 +543,38 @@
     </div>
   </div>
 </template>
-<script></script>
+<script>
+import axiosIns from "@/plugins/Axios";
+import CmCelendar from "@/components/common/CmCelendar.vue"; // Adjust the path according to your folder structure
+
+export default {
+  name: "LearningContent",
+  components: {
+    CmCelendar, // Register the imported component here
+  },
+  data() {
+    return {
+      courseList: [],
+    };
+  },
+  async created() {
+    await this.cource(); // Fetch the courses when component is created
+  },
+
+  methods: {
+    async cource() {
+      try {
+        const res = await axiosIns.get("LearningCourse?pageNumber=1&pageSize=10");
+        this.courseList = res.data;
+
+        console.log(this.courseList);
+      } catch (error) {
+        throw error;
+      }
+    },
+  },
+};
+</script>
 <style>
 .learning-content {
   display: flex;
@@ -436,18 +585,19 @@
   flex-grow: 1;
   /* Let the right div take up the remaining space */
   background-color: #ffffff;
-  padding: 20px;
+  padding: 32px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   /* Add some shadow */
 }
 
 /* left */
 .left {
-  width: 250px;
+  width: 278px;
   background-color: #fff;
   padding: 20px;
   font-family: Arial, sans-serif;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: auto;
   /* Adds shadow for a slight 3D effect */
 }
 
@@ -516,35 +666,6 @@
   color: #0056b3;
 }
 
-/* Specific icon colors for different sections */
-.application:nth-child(3) .label-app::before {
-  content: "\1F4C8";
-  /* Report icon */
-  font-size: 16px;
-  color: #e91e63;
-}
-
-.application:nth-child(4) .label-app::before {
-  content: "\1F4CA";
-  /* Chart icon */
-  font-size: 16px;
-  color: #9c27b0;
-}
-
-.application:nth-child(5) .label-app::before {
-  content: "\1F512";
-  /* Lock/system icon */
-  font-size: 16px;
-  color: #ff5722;
-}
-
-.application:nth-child(6) .label-app::before {
-  content: "\1F4E6";
-  /* Share icon */
-  font-size: 16px;
-  color: #03a9f4;
-}
-
 /* header*/
 
 .header {
@@ -559,6 +680,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  padding: 5px;
 }
 
 .flag svg {
@@ -658,7 +780,6 @@ label {
   width: 100%;
   width: 300px;
   /* Adjust width */
-
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: #fff;
@@ -666,27 +787,27 @@ label {
   /* Subtle inner shadow */
   font-size: 14px;
 }
-
-#from-date,
-#to-date {
-  padding: 8px;
+#datepicker-dateformat1__outer_,
+#datepicker-dateformat1__dialog_ {
   width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-  font-size: 14px;
-  padding-left: 30px;
 }
-
-.date-picker-container {
+#datepicker-dateformat1__dialog_ .date-picker-container {
   position: relative;
+}
+/* icon of calendar */
+.btn .bi-calendar {
+  position: absolute;
+  font-size: 18px;
+  transform: translateY(-50%);
+  color: #888;
+  left: 5px;
 }
 
 .date-icon {
   position: absolute;
   left: 10px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-65%);
   font-size: 18px;
   color: #888;
 }
@@ -741,29 +862,28 @@ input[type="text"] {
   border-color: #71b0f3;
   outline: none;
 }
-
-.btn {
+.btn-hide {
+  --bs-btn-padding-x: 0;
+  --bs-btn-padding-y: 0;
   position: relative;
-  display: flex;
 }
 
-.btn .button-hide {
-  padding: 10px 40px;
+.button-hide {
+  padding: 0px 60px;
   width: 60px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   font-size: 14px;
-  text-decoration: none;
-  color: #ccc;
+  color: #000000;
 }
 
-.btn svg {
+.btn-hide svg {
   position: absolute;
   font-size: 18px;
-  transform: translateY(50%);
+  transform: translateY(150%);
   color: #888;
-  left: 24px;
+  left: 28px;
 }
 
 input[type="date"] {
@@ -797,10 +917,13 @@ input[type="date"] {
   margin-top: 20px;
 }
 
-.parents-card {
-  display: flex;
-  gap: 20px;
-  /* Space between the cards */
+.left-card {
+  float: left;
+  margin: 1px;
+}
+.right-card {
+  float: right;
+  margin: 1px;
 }
 
 .card {
@@ -810,8 +933,8 @@ input[type="date"] {
   /* Subtle shadow for cards */
   padding: 10px;
   width: 500px;
+  margin: 10px 0;
 }
-
 
 .content-name {
   color: #475569;

@@ -6,7 +6,7 @@
     </div>
     <div class="registration-form">
       <div class="form-header">
-        <img src="" alt="CLS Icon" class="cls-icon" />
+        <img src="../views/img/Untitled.png" alt="CLS Icon" class="cls-icon" />
         <h5 class="bold-text">Đăng ký</h5>
         <p>Nhanh chóng và dễ dàng</p>
       </div>
@@ -47,11 +47,21 @@
           <label for="phone">Số điện thoại</label>
           <div class="phone-input">
             <span class="country-flag">
-              <img
-                src=""
-                alt="Vietnam Flag"
-                style="width: 35px; height: 20px"
-              />
+              <svg
+                width="36"
+                height="24"
+                viewBox="0 0 36 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect x="0.919922" width="35.08" height="24" fill="#DA251D" />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M18.4598 15.0666L14.2302 17.9752L15.7223 13.1012L11.6161 10.0247L16.768 9.92099L18.4598 5.11108L20.1517 9.92099L25.3035 10.0247L21.1973 13.1012L22.6895 17.9752L18.4598 15.0666Z"
+                  fill="#FFFF00"
+                />
+              </svg>
             </span>
             <input
               type="tel"
