@@ -1,7 +1,7 @@
 <template>
   <div class="cls-container">
     <div class="cls-logo-container">
-      <img src="" alt="CLS Logo" class="cls-logo" />
+      <img src="../views/img/Untitled.png" alt="CLS Logo" class="cls-logo" />
       <h1>Cloud Learning System</h1>
     </div>
     <div class="registration-form">
@@ -36,7 +36,7 @@
         <div class="form-group">
           <label for="email">Email*</label>
           <input
-            type="email"
+            type="text"
             id="email"
             v-model="form.email"
             required
@@ -64,7 +64,7 @@
               </svg>
             </span>
             <input
-              type="tel"
+              type="text"
               id="phone"
               v-model="form.phone"
               placeholder="Số điện thoại"
@@ -86,38 +86,24 @@
             <label for="password">Nhập mật khẩu*</label>
             <div class="password-input">
               <input
-                :type="showPassword ? 'text' : 'password'"
+                type="password"
                 id="password"
                 v-model="form.password"
                 required
                 placeholder=""
               />
-              <button
-                type="button"
-                @click="togglePassword('password')"
-                class="toggle-password"
-              >
-                <i :class="showPassword ? 'eye-open' : 'eye-closed'"></i>
-              </button>
             </div>
           </div>
           <div class="form-group">
             <label for="confirmPassword">Nhập lại mật khẩu*</label>
             <div class="password-input">
               <input
-                :type="showConfirmPassword ? 'text' : 'password'"
+                type="password"
                 id="confirmPassword"
                 v-model="form.confirmPassword"
                 required
                 placeholder=""
               />
-              <button
-                type="button"
-                @click="togglePassword('confirmPassword')"
-                class="toggle-password"
-              >
-                <i :class="showConfirmPassword ? 'eye-open' : 'eye-closed'"></i>
-              </button>
             </div>
           </div>
         </div>
@@ -145,7 +131,8 @@
   referrerpolicy="no-referrer"
 ></script>
 <script>
-import axios from "axios";
+import axiosIns from "@/plugins/Axios";
+
 export default {
   data() {
     return {
@@ -159,21 +146,18 @@ export default {
         confirmPassword: "",
         agreement: false,
       },
-      showPassword: false,
-      showConfirmPassword: false,
     };
   },
   methods: {
-    togglePassword(field) {
-      if (field === "password") {
-        this.showPassword = !this.showPassword;
-      } else if (field === "confirmPassword") {
-        this.showConfirmPassword = !this.showConfirmPassword;
-      }
-    },
+    
     async submitForm() {
       if (this.form.password !== this.form.confirmPassword) {
         alert("Mật khẩu và xác nhận mật khẩu không khớp!");
+        return;
+      }
+
+      if (!this.form.agreement) {
+        alert("Bạn cần đồng ý với điều khoản.");
         return;
       }
 
@@ -181,14 +165,15 @@ export default {
         LastName: this.form.lastName,
         FirstName: this.form.firstName,
         Email: this.form.email,
-        Phone: this.form.phone,
-        Username: this.form.username,
+        PhoneNumber: this.form.phone, // Ensure phone number matches backend format
+        Account: this.form.username,
         Password: this.form.password,
+        Role: "User", // Add a default role if needed
       };
 
       try {
-        const response = await axios.post(
-          "https://localhost:44347/api/Registration",
+        const response = await axiosIns.post(
+          "https://localhost:7066/Register",
           userData
         );
         console.log("Đăng ký thành công:", response.data);
@@ -218,6 +203,7 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 .cls-container {
   display: flex;

@@ -555,6 +555,7 @@ export default {
   data() {
     return {
       courseList: [],
+      pageNumber: 1,
     };
   },
   async created() {
@@ -564,7 +565,7 @@ export default {
   methods: {
     async cource() {
       try {
-        const res = await axiosIns.get("LearningCourse?pageNumber=1&pageSize=10");
+        const res = await axiosIns.get(`LearningCourse?pageNumber=${this.pageNumber}&pageSize=10`);
         this.courseList = res.data;
 
         console.log(this.courseList);

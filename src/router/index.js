@@ -44,7 +44,7 @@ const routes = [
   },
 
   {
-    path: '/register',
+    path: '/Register',
     name:'RegisterView',
     component: RegisterView
   }
