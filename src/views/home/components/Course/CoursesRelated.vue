@@ -3,12 +3,11 @@
     <h1 class="mb-[40px] text-[18px] font-semibold">Các khóa học liên quan</h1>
     <div class="flex flex-col gap-[20px] mb-[40px]">
       <CmCourse
-        v-for="course in courses"
-        :key="course.idCourse"
-        :id-course="course.idCourse"
-        :name-course="course.nameCourse"
-        :img-course="course.img"
-        :time-created="course.timeCreated"
+        v-for="course in getCourse.similarCourses"
+        :key="course.id"
+        :id-course="course.id"
+        :name-course="course.name"
+        :img-course="course.imgURL"
       >
       </CmCourse>
     </div>
@@ -31,11 +30,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['courses']),
-  },
-
-  created() {
-    this.$store.dispatch('fetchCourses');
+    ...mapGetters('course', ['getCourse']),
   },
 };
 </script>

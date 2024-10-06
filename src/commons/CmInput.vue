@@ -95,7 +95,7 @@ export default {
 .containerInput {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   color: #344054;
   font-size: 14px;
   height: max-content;
@@ -104,10 +104,10 @@ export default {
 .containerInput label {
   font-weight: 500;
   text-align: left;
-  line-height: 20px;
+  line-height: 18px;
 }
 .containerInput input {
-  padding: 10px 12px;
+  padding: 8px 12px;
   border: 1px solid #d0d5dd;
   box-shadow: 0px 1px 2px 0px #1018280d;
   border-radius: 8px;
@@ -122,7 +122,7 @@ export default {
   position: relative;
   width: 100%;
   max-height: 100%;
-  height: 38px;
+  height: 36px;
 }
 
 .wapperInput img {
@@ -162,8 +162,8 @@ export default {
 
 .error-message {
   color: #dc2626;
-  font-size: 12px;
-  margin-top: 4px;
+  font-size: 11px;
+  margin-top: 2px;
 }
 
 input.error {

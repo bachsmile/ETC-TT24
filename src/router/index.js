@@ -17,25 +17,29 @@ const routes = [
           {
             path: 'about',
             components: {
-              courseContent: () => import('@/views/home/components/Course/CourseAbout.vue'),
+              courseContent: () =>
+                import('@/views/home/components/Course/CourseAbout.vue'),
             },
           },
           {
             path: 'content',
             components: {
-              courseContent: () => import('@/views/home/components/Course/CourseContent.vue'),
+              courseContent: () =>
+                import('@/views/home/components/Course/CourseContent.vue'),
             },
           },
           {
             path: 'document',
             components: {
-              courseContent: () => import('@/views/home/components/Course/CourseDoc.vue'),
+              courseContent: () =>
+                import('@/views/home/components/Course/CourseDoc.vue'),
             },
           },
           {
             path: 'result',
             components: {
-              courseContent: () => import('@/views/home/components/Course/CourseResults.vue'),
+              courseContent: () =>
+                import('@/views/home/components/Course/CourseResults.vue'),
             },
           },
           {
@@ -63,5 +67,23 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
+
+router.beforeEach((to, from, next) => {
+  const isPublicRoute = to.path === '/login' || to.path === '/register';
+  const isAuthenticated = isLoggedIn();
+
+  if (!isAuthenticated && !isPublicRoute) {
+    next('/login');
+  } else if (isAuthenticated && isPublicRoute) {
+    next('/');
+  } else {
+    next();
+  }
+});
+
+function isLoggedIn() {
+  const token = localStorage.getItem('token');
+  return !!token;
+}
 
 export default router;

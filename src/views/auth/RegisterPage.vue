@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex justify-end items-center">
+  <div class="container1 flex justify-end items-center">
     <div>
       <img class="bg" src="../../assets/bg.jpg" alt="" />
       <img class="logo" src="../../assets/logo.svg" alt="" />
@@ -30,7 +30,8 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.container1 {
+  width: 100vw;
   position: relative;
   display: flex;
   justify-content: end;
@@ -41,7 +42,7 @@ export default {
   overflow: hidden;
 }
 
-.container .bg {
+.container1 .bg {
   position: absolute;
   top: 0;
   right: 0;
@@ -50,7 +51,7 @@ export default {
   z-index: -1;
 }
 
-.container .logo {
+.container1 .logo {
   position: absolute;
   bottom: 50%;
   left: 0;

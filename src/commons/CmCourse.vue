@@ -42,7 +42,7 @@ export default {
     },
     timeCreated: {
       type: String,
-      required: true,
+      default: '20-11-2024',
     },
     imgCourse: {
       type: String,

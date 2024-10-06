@@ -64,7 +64,7 @@ export default {
 
     defaultComment: {
       type: Boolean,
-      default: false,
+      default: true,
     },
   },
 

@@ -5,7 +5,7 @@
         <img class="size-full" :src="item.src" alt="" />
       </div>
       <div>
-        <h1 class="text-[#344054] text-[14px] font-light">
+        <h1 class="text-[#344054] text-[14px] font-normal">
           {{ item.content }}
         </h1>
       </div>

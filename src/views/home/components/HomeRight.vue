@@ -1,8 +1,12 @@
 <template>
-  <div class="flex-[0_0_28%]">
-    <div :class="['card', { fixed: isFixed }]" :style="{ top: isFixed ? `${topOffset}px` : 'auto' }">
-      <div>
-        <img class="h-full w-full max-h-[180px] object-cover rounded-[8px]" src="../../../assets/khoahoc.jpg" alt="" />
+  <div class="home-right">
+    <div :class="['card']">
+      <div class="shadow-1 p-2">
+        <img
+          class="h-full w-full max-h-[180px] object-contain rounded-[8px]"
+          :src="getCourse.imgURL"
+          alt=""
+        />
       </div>
       <div>
         <CmProgess :ratio="70" />
@@ -11,12 +15,24 @@
       <div>
         <CmInfomation
           :content="[
-            { src: code, content: 'Mã khóa học 003' },
-            { src: book, content: '123 nội dung' },
-            { src: clock, content: '1h 23m' },
-            { src: monitor, content: 'Hình thức online' },
-            { src: award, content: 'Có chứng nhận' },
-            { src: calendar, content: 'Ngày hết hạn 03/11/2022' },
+            {
+              src: code,
+              content: 'Mã khóa học ' + getCourse.statistics.courseCode,
+            },
+            {
+              src: book,
+              content: getCourse.statistics.totalLessons + ' Nội dung',
+            },
+            { src: clock, content: getCourse.statistics.totalDuration },
+            { src: monitor, content: 'Hình thức ' + getCourse.statistics.mode },
+            {
+              src: award,
+              content:
+                getCourse.statistics.isCertified === true
+                  ? 'Có chứng nhận'
+                  : 'Không có chứng nhận',
+            },
+            { src: calendar, content: getCourse.statistics.expiryDate },
           ]"
         />
       </div>
@@ -29,6 +45,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import CmButton from '@/commons/CmButton.vue';
 import CmProgess from '@/commons/CmProgess.vue';
 import CmInfomation from '@/commons/CmInfomation.vue';
@@ -55,10 +72,13 @@ export default {
       monitor,
       award,
       calendar,
-      isFixed: false, // Trạng thái để xác định xem có nên gán fixed không
-      topOffset: 20, // Khoảng cách từ đỉnh khi có fixed
     };
   },
+
+  computed: {
+    ...mapGetters('course', ['getCourse']),
+  },
+
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
   },
@@ -67,28 +87,39 @@ export default {
   },
   methods: {
     handleScroll() {
-      this.isFixed = window.scrollY > 250; // Thay đổi giá trị này theo nhu cầu của bạn
+      this.isFixed = window.scrollY > 250;
     },
   },
 };
 </script>
 
 <style scoped>
+.shadow-1 {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.home-right {
+  flex: 0 0 28%;
+  position: relative; /* Thêm dòng này */
+}
+
 .card {
   box-shadow: 0px 4px 6px -2px #10182808, 0px 12px 16px -4px #10182814;
   border-radius: 8px;
   background-color: #fff;
-  transition: all 0.3s linear;
   padding: 16px 16px 24px 16px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  position: sticky; /* Thay đổi từ fixed thành sticky */
+  top: 20px; /* Khoảng cách từ đỉnh trang khi trở thành sticky */
+  max-width: 376px;
 }
-
 .card.fixed {
   position: fixed; /* Gán vị trí fixed */
   width: calc(28% - 32px); /* Đảm bảo chiều rộng đúng */
   z-index: 1000; /* Đảm bảo nó nằm trên các phần tử khác */
   top: 20px; /* Sử dụng topOffset để xác định khoảng cách top */
+  max-width: 376px;
 }
 </style>

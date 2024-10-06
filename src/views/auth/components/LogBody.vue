@@ -80,18 +80,17 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['isAuthenticated', 'authError']),
+    ...mapGetters('auth', ['isAuthenticated', 'authError']),
   },
   watch: {
     authError(newError) {
       if (newError) {
-        // Hiển thị thông báo lỗi cho người dùng
         console.error('Authentication error:', newError);
       }
     },
   },
   methods: {
-    ...mapActions(['loginUser']),
+    ...mapActions('auth', ['loginUser']),
     async validateForm() {
       try {
         await loginFormSchema.validate(this.formData, { abortEarly: false });

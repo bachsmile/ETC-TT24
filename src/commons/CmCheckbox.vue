@@ -1,7 +1,9 @@
 <template>
   <div class="checkboxContainer">
-    <input :id="name" v-model="inputValue" type="checkbox" @change="emitValue" />
-    <label :for="name">{{ label }}</label>
+    <input :id="name" type="checkbox" :checked="inputValue" @change="handleChange" />
+    <label class="focus::!text-[#344054]" :class="error ? '!text-red-500' : ''" :for="name"
+      >{{ label }}{{ required ? '*' : '' }}</label
+    >
   </div>
 </template>
 
@@ -17,6 +19,14 @@ export default {
       required: true,
     },
     modelValue: {
+      type: Boolean,
+      default: false,
+    },
+    required: {
+      type: Boolean,
+      default: false,
+    },
+    error: {
       type: String,
       default: '',
     },
@@ -28,18 +38,25 @@ export default {
     };
   },
 
+  watch: {
+    modelValue(newValue) {
+      this.inputValue = newValue; // Cập nhật khi modelValue thay đổi
+    },
+  },
+
   methods: {
-    emitValue() {
+    handleChange() {
+      this.inputValue = !this.inputValue; // Đảo ngược giá trị checkbox
       this.$emit('input', this.inputValue);
     },
   },
 };
 </script>
 
-<style>
+<style scoped>
 .checkboxContainer {
   display: flex;
-  align-items: start;
+  align-items: center;
   gap: 8px;
   margin-bottom: 10px;
 }
@@ -52,8 +69,14 @@ export default {
 }
 
 .checkboxContainer input[type='checkbox'] {
-  margin-top: 5px;
+  margin-top: 0;
   margin-right: 8px;
-  width: max-content;
+  width: auto;
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 12px;
+  margin-left: 8px; /* Căn lề cho thông báo lỗi */
 }
 </style>

@@ -16,10 +16,12 @@
         <h1 class="font-semibold mb-[16px]">Thông tin tác giả</h1>
         <div class="flex items-center gap-6">
           <div class="size-[96px] rounded-full border-2 border-white cicrle-shadow">
-            <img class="size-[100%] object-cover rounded-full" src="../../../../assets/account.png" alt="" />
+            <img class="size-[100%] object-cover rounded-full" :src="getCourse.authors[0].imgURL" alt="" />
           </div>
           <div class="flex justify-center flex-col gap-1">
-            <h1 class="text-[18px] font-semibold text-[#101828]">Trần Xuân Bách</h1>
+            <h1 class="text-[18px] font-semibold text-[#101828]">
+              {{ getCourse.authors[0].name }}
+            </h1>
             <p class="text-[16px] font-light leading-[24px] text-[#667085]">Chủ khóa học</p>
           </div>
         </div>
@@ -27,7 +29,7 @@
       <div class="bg-[#EFF8FF] border border-[#EAECF0] rounded-[8px] px-[16px] py-[12px] flex flex-col gap-[24px]">
         <h1 class="font-semibold text-[14px] mb-[16px] leading-[20px]">Danh sách tác giả</h1>
         <div class="grid grid-cols-3 gap-[24px]">
-          <CmUser v-for="item in author" :id="item.id" :key="item.id" :name="item.name" :img="item.img" />
+          <CmUser v-for="item in getCourse.authors" :id="item.id" :key="item.id" :name="item.name" :img="item.imgURL" />
         </div>
       </div>
     </div>
@@ -44,11 +46,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['author']),
-  },
-
-  created() {
-    this.$store.dispatch('fetchAuthors');
+    ...mapGetters('course', ['getCourse']),
   },
 };
 </script>
