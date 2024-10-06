@@ -7,13 +7,8 @@
 </template>
 
 <script>
-import CmButton from './CmButton.vue';
-
 export default {
   name: "CmCard",
-  components: {
-    CmButton,
-  },
   props: {
     title: {
       type: String,
