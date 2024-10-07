@@ -17,15 +17,14 @@
 <script>
 import CmButton from '@/components/common/CmButton.vue';
 import DetailPd from './components/DetailPd.vue';
-import PreviewPd from './components/PreviewPd.vue';
+// Removed unused import
 import MethodsUtil from '@/utils/MethodsUtil';
 import { computed, reactive, ref } from 'vue';
 
 export default {
   name: "ProductDetail",
   components: {
-    PreviewPd,
-    DetailPd,
+    DetailPd, // Removed PreviewPd from here
     CmButton
   },
   props: {
@@ -60,8 +59,7 @@ export default {
     }
     MethodsUtil.requestApiCustom('https://jsonplaceholder.typicode.com/posts/1/comments', 'GET', params).then((value) => {
 
-
-
+      // Handle response here if needed
     })
 
     console.log('ref', this.$refs);

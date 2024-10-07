@@ -1,49 +1,99 @@
 <template>
   <div class="cls-container">
     <div class="cls-logo-container">
-      <img src="@/assets/image/logo_2.png" alt="CLS Logo" class="cls-logo">
+      <img 
+        src="@/assets/image/logo_2.png" 
+        alt="CLS Logo" 
+        class="cls-logo" 
+      />
       <h1>Cloud Learning System</h1>
     </div>
     <div class="registration-form">
       <div class="form-header">
-        <img src="@/assets/image/logo_1.jpg" alt="CLS Icon" class="cls-icon">
-        <h5 class="bold-text">Đăng ký</h5>
-        <p>Nhanh chóng và dễ dàng</p>
+        <img 
+          src="@/assets/image/logo_1.jpg" 
+          alt="CLS Icon" 
+          class="cls-icon" 
+        />
+        <h5 class="bold-text">
+          Đăng ký
+        </h5>
+        <p>
+          Nhanh chóng và dễ dàng
+        </p>
       </div>
       <form @submit.prevent="submitForm">
         <div class="form-row">
           <div class="form-group">
             <label for="lastName">Họ*</label>
-            <input type="text" id="lastName" v-model="form.lastName" placeholder="Họ">
+            <input 
+              v-model="form.lastName" 
+              type="text" 
+              id="lastName" 
+              placeholder="Họ" 
+            />
           </div>
           <div class="form-group">
             <label for="firstName">Tên*</label>
-            <input type="text" id="firstName" v-model="form.firstName"  placeholder="Tên">
+            <input 
+              v-model="form.firstName" 
+              type="text" 
+              id="firstName" 
+              placeholder="Tên" 
+            />
           </div>
         </div>
         <div class="form-group">
           <label for="email">Email*</label>
-          <input type="email" id="email" v-model="form.email"  placeholder="Email">
+          <input 
+            v-model="form.email" 
+            type="email" 
+            id="email" 
+            placeholder="Email" 
+          />
         </div>
         <div class="form-group">
           <label for="phone">Số điện thoại</label>
           <div class="phone-input">
             <span class="country-flag">
-              <img src="@/assets/image/laco.jpg" alt="Vietnam Flag" style="width: 35px; height: 20px;" />
+              <img 
+                src="@/assets/image/laco.jpg" 
+                alt="Vietnam Flag" 
+                style="width: 35px; height: 20px" 
+              />
             </span>
-            <input type="tel" id="phone" v-model="form.phone" placeholder="Số điện thoại">
+            <input 
+              v-model="form.phone" 
+              type="tel" 
+              id="phone" 
+              placeholder="Số điện thoại" 
+            />
           </div>
         </div>
         <div class="form-group">
           <label for="username">Tên đăng nhập*</label>
-          <input type="text" id="username" v-model="form.username"  placeholder="Tên đăng nhập">
+          <input 
+            v-model="form.username" 
+            type="text" 
+            id="username" 
+            placeholder="Tên đăng nhập" 
+          />
         </div>
         <div class="form-row">
           <div class="form-group">
             <label for="password">Nhập mật khẩu*</label>
             <div class="password-input">
-              <input :type="showPassword ? 'text' : 'password'" id="password" v-model="form.password"  placeholder="">
-              <button type="button" @click="togglePassword('password')" class="toggle-password">
+              <input 
+                v-model="form.password" 
+                :type="showPassword ? 'text' : 'password'" 
+                id="password" 
+                placeholder="" 
+              />
+              <button 
+                type="button" 
+                @click="togglePassword('password')" 
+                class="toggle-password"
+              >
                 <i :class="showPassword ? 'eye-open' : 'eye-closed'"></i>
               </button>
             </div>
@@ -51,8 +101,17 @@
           <div class="form-group">
             <label for="confirmPassword">Nhập lại mật khẩu*</label>
             <div class="password-input">
-              <input :type="showConfirmPassword ? 'text' : 'password'" id="confirmPassword" v-model="form.confirmPassword"  placeholder="">
-              <button type="button" @click="togglePassword('confirmPassword')" class="toggle-password">
+              <input 
+                v-model="form.confirmPassword" 
+                :type="showConfirmPassword ? 'text' : 'password'" 
+                id="confirmPassword" 
+                placeholder="" 
+              />
+              <button 
+                type="button" 
+                @click="togglePassword('confirmPassword')" 
+                class="toggle-password"
+              >
                 <i :class="showConfirmPassword ? 'eye-open' : 'eye-closed'"></i>
               </button>
             </div>
@@ -60,53 +119,66 @@
         </div>
         <div class="form-group">
           <label class="checkbox-container">
-            <input type="checkbox" v-model="form.agreement">
+            <input 
+              type="checkbox" 
+              v-model="form.agreement" 
+            />
             <span class="checkmark"></span>
-            Tôi đồng ý cho "Trí Việt Test CLS 4.0s" sử dụng các thông tin trên cho mục đích học tập.
+            <span class="agreement-text">
+              Tôi đồng ý cho "Trí Việt Test CLS 4.0s" 
+              sử dụng các thông tin trên cho mục đích học tập.
+            </span>
           </label>
         </div>
-        <button type="submit" class="submit-btn">Đăng ký</button>
+
+        <button 
+          type="submit" 
+          class="submit-btn"
+        >
+          Đăng ký
+        </button>
       </form>
-      <p class="login-link">Bạn đã có tài khoản? <a href="#">Đăng nhập ngay</a></p>
+      <p class="login-link">
+        Bạn đã có tài khoản?
+        <router-link to="/login">Đăng nhập ngay</router-link>
+      </p>
     </div>
   </div>
 </template>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-import axios from 'axios';
+import axios from "axios";
 export default {
   data() {
     return {
       form: {
-        lastName: '',
-        firstName: '',
-        email: '',
-        phone: '',
-        username: '',
-        password: '',
-        confirmPassword: '',
-        agreement: false
+        lastName: "",
+        firstName: "",
+        email: "",
+        phone: "",
+        username: "",
+        password: "",
+        confirmPassword: "",
+        agreement: false,
       },
       showPassword: false,
-      showConfirmPassword: false
+      showConfirmPassword: false,
     };
   },
   methods: {
     togglePassword(field) {
-      if (field === 'password') {
+      if (field === "password") {
         this.showPassword = !this.showPassword;
-      } else if (field === 'confirmPassword') {
+      } else if (field === "confirmPassword") {
         this.showConfirmPassword = !this.showConfirmPassword;
       }
     },
     async submitForm() {
       if (this.form.password !== this.form.confirmPassword) {
-        alert('Mật khẩu và xác nhận mật khẩu không khớp!');
+        alert("Mật khẩu và xác nhận mật khẩu không khớp!");
         return;
       }
 
-      
       const userData = {
         LastName: this.form.lastName,
         FirstName: this.form.firstName,
@@ -114,38 +186,44 @@ export default {
         Phone: this.form.phone,
         Username: this.form.username,
         Password: this.form.password,
-       
       };
 
       try {
-        const response = await axios.post('https://localhost:44347/api/Registration', userData);
-        console.log('Đăng ký thành công:', response.data);
-        alert('Đăng ký thành công!');
-   
+        const response = await axios.post(
+          "https://localhost:44347/api/Registration",
+          userData
+        );
+        console.log("Đăng ký thành công:", response.data);
+        alert("Đăng ký thành công!");
+
         this.resetForm();
+
+        
+        this.$router.push("/login");
       } catch (error) {
         if (error.response) {
-          console.error('Có lỗi xảy ra:', error.response.data);
-          alert('Lỗi: ' + error.response.data);
+          console.error("Có lỗi xảy ra:", error.response.data);
+          alert("Lỗi: " + error.response.data);
         } else {
-          console.error('Có lỗi mạng:', error);
-          alert('Lỗi mạng. Vui lòng thử lại.');
+          console.error("Có lỗi mạng:", error);
+          alert("Lỗi mạng. Vui lòng thử lại.");
         }
       }
     },
     resetForm() {
-      this.form.lastName = '';
-      this.form.firstName = '';
-      this.form.email = '';
-      this.form.phone = '';
-      this.form.username = '';
-      this.form.password = '';
-      this.form.confirmPassword = '';
+      this.form.lastName = "";
+      this.form.firstName = "";
+      this.form.email = "";
+      this.form.phone = "";
+      this.form.username = "";
+      this.form.password = "";
+      this.form.confirmPassword = "";
       this.form.agreement = false;
-    }
-  }
+    },
+  },
 };
 </script>
+
 <style scoped>
 .cls-container {
   display: flex;
@@ -153,8 +231,9 @@ export default {
   align-items: center;
   min-height: 100vh;
   background-color: #1e3a8a;
-  background-image: url('@/assets/image/background.jpg'); 
-  background-size: cover; 
+  background-image: url(@/assets/image/background.jpg);
+  background-size: cover;
+  background-position: center;
   font-family: Arial, sans-serif;
 }
 
@@ -162,8 +241,8 @@ export default {
   text-align: center;
   color: white;
   margin-right: 2rem;
-  margin-left: 5.5cm;
- }
+  margin-left: 7.5cm;
+}
 
 .cls-logo {
   width: 400px;
@@ -175,9 +254,9 @@ export default {
   padding: 2rem;
   border-radius: 8px;
   width: 400px;
-  margin-top: 1.5cm;
-  margin-bottom: 1.5cm; 
-  margin-right: 1.5cm; 
+  margin-top: 0.5cm;
+  margin-bottom: 0.5cm;
+  margin-right: 1.0cm;
   margin-left: auto;
 }
 
@@ -187,7 +266,7 @@ export default {
 }
 
 .cls-icon {
-  width: 140px;
+  width: 120px;
 }
 
 .form-row {
@@ -196,13 +275,14 @@ export default {
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
 }
 
 label {
   display: block;
-  margin-bottom: 0.5rem;
   font-weight: bold;
+  margin-bottom: 0.2rem;
+  font-size: 0.95rem;
 }
 
 input[type="text"],
@@ -210,9 +290,11 @@ input[type="email"],
 input[type="tel"],
 input[type="password"] {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.3rem 0.5rem; 
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 0.9rem; 
+  line-height: 1.2;
 }
 
 .phone-input {
@@ -220,17 +302,28 @@ input[type="password"] {
   align-items: center;
   border: 1px solid #ccc;
   border-radius: 4px;
+  height: 28.48px;
 }
 
 .country-flag {
-  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   background-color: #f0f0f0;
+  height: 100%;
+  width: 40px; 
+}
+
+.country-flag img {
+  height: 26px; 
+  width: 35px; 
+  object-fit: contain; 
 }
 
 .password-input {
   position: relative;
 }
-
 .toggle-password {
   position: absolute;
   right: 0.5rem;
@@ -247,15 +340,18 @@ input[type="password"] {
   user-select: none;
 }
 
-.submit-btn {
+
+  .submit-btn {
   width: 100%;
-  padding: 0.75rem;
+  padding: 0.5rem; 
   background-color: #3b82f6;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 0.95rem; 
 }
+
 
 .login-link {
   text-align: center;
@@ -266,7 +362,13 @@ input[type="password"] {
   color: #3b82f6;
   text-decoration: none;
 }
+
 .bold-text {
   font-weight: bold;
+}
+
+.agreement-text {
+  font-weight: normal;
+  font-size: 0.9em;
 }
 </style>
