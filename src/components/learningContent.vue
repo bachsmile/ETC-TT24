@@ -451,7 +451,7 @@
               class="card"              
             >
               <div class="title">
-                <p class="course-name">{{ course.nameCourse }}</p>
+                <p class="course-name">{{ course.id_Course }} {{ course.nameCourse }}</p>
                 <p class="content-name">{{ course.description }}</p>
               </div>
               <div class="confirm">
@@ -473,7 +473,7 @@
               class="card"
             >
               <div class="title">
-                <p class="course-name">{{ course.nameCourse }}</p>
+                <p class="course-name">{{ course.id_Course }} {{ course.nameCourse }}</p>
                 <p class="content-name">{{ course.description }}</p>
               </div>
               <div class="confirm">
@@ -490,7 +490,7 @@
       <!-- trang footer phân trang -->
       <div class="pagination">
         <div class="button-left">
-          <button>
+          <button @click="prevPage" :disabled="pageNumber === 1">
             <div class="previous-button">
               <svg
                 width="14"
@@ -512,13 +512,13 @@
         </div>
         <div class="number-page">
           <div class="number-around">
-            <div class="number">1</div>
+            <div class="number" @click="changePage(1)">1</div>
           </div>
           <div class="number-around">
-            <div class="number">2</div>
+            <div class="number" @click="changePage(2)">2</div>
           </div>
         </div>
-        <div class="button-right">
+        <div class="button-right" @click="nextPage">
           <button>
             <div class="behind-button">
               <svg
@@ -572,6 +572,24 @@ export default {
       } catch (error) {
         throw error;
       }
+       // Go to the previous page
+    
+    },
+    prevPage() {
+      if (this.pageNumber > 1) {
+        this.pageNumber -= 1;
+        this.cource();
+      }
+    },
+    // Go to the next page
+    nextPage() {
+      this.pageNumber += 1;
+      this.cource();
+    },
+    // Change to specific page
+    changePage(page) {
+      this.pageNumber = page;
+      this.cource();
     },
   },
 };
@@ -598,7 +616,7 @@ export default {
   padding: 20px;
   font-family: Arial, sans-serif;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: auto;
+  height: 800px;
   /* Adds shadow for a slight 3D effect */
 }
 
@@ -671,7 +689,7 @@ export default {
 
 .header {
   width: 100%;
-  background-color: #ffffff;
+  background-color: #f9f9f9;
   /* White background for the header */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   /* Slight shadow for depth */
@@ -935,6 +953,9 @@ input[type="date"] {
   padding: 10px;
   width: 500px;
   margin: 10px 0;
+}
+.title{
+  height: 120px;
 }
 
 .content-name {

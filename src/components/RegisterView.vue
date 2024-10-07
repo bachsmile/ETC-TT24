@@ -151,6 +151,10 @@ export default {
   methods: {
     
     async submitForm() {
+      if (this.form.password.length < 8) {
+        alert("Mật khẩu phải chứa ít nhất 8 ký tự.");
+        return;
+      }
       if (this.form.password !== this.form.confirmPassword) {
         alert("Mật khẩu và xác nhận mật khẩu không khớp!");
         return;
