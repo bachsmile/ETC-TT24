@@ -58,9 +58,9 @@
         <div class="login-link">
   <label @click="$router.push('/register')">
     <img src="@/assets/image/add.png" alt="create new acc" class="add-icon" />
-    <span>Tạo tài khoản mới</span>
+    <span>Tạo tài khoản </span>
   </label>
- 
+ clear
 </div>
       </form>
     </div>
