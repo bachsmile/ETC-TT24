@@ -1,13 +1,27 @@
 <template>
   <div>
-    <b-card :title="title" class="cm-card">
-      <slot></slot>
-    </b-card>
+    <div class="title">
+      <p class="course-name">{{ course.id_Course }} {{ course.nameCourse }}</p>
+      <p class="content-name">{{ course.description }}</p>
+    </div>
+    <div class="confirm">
+      <div class="loading-percentage">
+        <!-- Nếu có loading percentage, có thể hiển thị ở đây -->
+        loading-percentage
+      </div>
+      <!-- <button class="begin-button">Bắt đầu</button> -->
+      <CmButton
+        propName="Bắt đầu"
+        variant="primary"
+        class="begin-button"
+        @click="handleClick"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import CmButton from './CmButton.vue';
+import CmButton from "./CmButton.vue";
 
 export default {
   name: "CmCard",
@@ -17,46 +31,28 @@ export default {
   props: {
     title: {
       type: String,
-      default: '',
+      default: "",
     },
     content: {
       type: String,
-      default: '',
+      default: "",
     },
   },
   data() {
     return {
-      key: 1
-    }
+      key: 1,
+    };
   },
   watch: {
-    'props.content': function (newValue, oldValue) {
-
-    },
-    key(newValue, oldValue) {
-
-    }
-  },
-
-  created() {
-    ;
-  },
-
-  mounted() {
-    ;
-  },
-  updated() {
-    ;
-  },
-  destroyed() {
-    ;
+    "props.content": function (newValue, oldValue) {},
+    key(newValue, oldValue) {},
   },
   methods: {
     handleClick() {
-      console.log('submit');
-    }
+      console.log("submit");
+    },
   },
-}
+};
 </script>
 
 <style scoped>

@@ -124,12 +124,7 @@
   </div>
 </template>
 
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"
-  integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-></script>
+
 <script>
 import axiosIns from "@/plugins/Axios";
 
@@ -169,7 +164,7 @@ export default {
         LastName: this.form.lastName,
         FirstName: this.form.firstName,
         Email: this.form.email,
-        PhoneNumber: this.form.phone, // Ensure phone number matches backend format
+        PhoneNumber: this.form.phone, 
         Account: this.form.username,
         Password: this.form.password,
         Role: "User", // Add a default role if needed
@@ -215,7 +210,7 @@ export default {
   align-items: center;
   min-height: 100vh;
   background-color: #1e3a8a;
-  background-image: url("");
+  background-image: url("E:\internship\fe\ETC-TT24\src\views\img\background.png");
   background-size: cover;
   font-family: Arial, sans-serif;
 }

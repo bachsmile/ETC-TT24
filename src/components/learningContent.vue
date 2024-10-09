@@ -443,15 +443,17 @@
       <!-- khóa học chính  -->
       <div class="main-content">
         <div class="left-card">
-          <div>
-            <div
-              v-for="(course, index) in courseList"
-              v-if="index % 2 === 0"
-              :key="course.id_Course"
-              class="card"              
-            >
+          <div
+            v-for="(course, index) in courseList"
+            v-if="index % 2 === 0"
+            :key="course.id"
+            class="card"
+          >
+            <div>
               <div class="title">
-                <p class="course-name">{{ course.id_Course }} {{ course.nameCourse }}</p>
+                <p class="course-name">
+                  {{ course.id }} {{ course.nameCourse }}
+                </p>
                 <p class="content-name">{{ course.description }}</p>
               </div>
               <div class="confirm">
@@ -465,15 +467,17 @@
           </div>
         </div>
         <div class="right-card">
-          <div>
-            <div
-              v-for="(course, index) in courseList"
-              v-if="index % 2 !== 0"
-              :key="course.id_Course"
-              class="card"
-            >
+          <div
+            v-for="(course, index) in courseList"
+            v-if="index % 2 !== 0"
+            :key="course.id"
+            class="card"
+          >
+            <div>
               <div class="title">
-                <p class="course-name">{{ course.id_Course }} {{ course.nameCourse }}</p>
+                <p class="course-name">
+                  {{ course.id }} {{ course.nameCourse }}
+                </p>
                 <p class="content-name">{{ course.description }}</p>
               </div>
               <div class="confirm">
@@ -565,15 +569,16 @@ export default {
   methods: {
     async cource() {
       try {
-        const res = await axiosIns.get(`LearningCourse?pageNumber=${this.pageNumber}&pageSize=10`);
+        const res = await axiosIns.get(
+          `LearningCourse?pageNumber=${this.pageNumber}&pageSize=10`
+        );
         this.courseList = res.data;
 
         console.log(this.courseList);
       } catch (error) {
         throw error;
       }
-       // Go to the previous page
-    
+      // Go to the previous page
     },
     prevPage() {
       if (this.pageNumber > 1) {
@@ -954,7 +959,7 @@ input[type="date"] {
   width: 500px;
   margin: 10px 0;
 }
-.title{
+.title {
   height: 120px;
 }
 
