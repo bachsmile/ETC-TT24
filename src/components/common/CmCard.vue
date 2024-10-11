@@ -1,65 +1,131 @@
+<!-- Card.vue -->
 <template>
-  <div>
+  <div class="card">
     <div class="title">
-      <p class="course-name">{{ course.id_Course }} {{ course.nameCourse }}</p>
-      <p class="content-name">{{ course.description }}</p>
+      <p class="course-name">{{idCourse}} {{courseName}}</p>
+      <p class="content-name">{{contentName}}</p>
     </div>
     <div class="confirm">
       <div class="loading-percentage">
-        <!-- Nếu có loading percentage, có thể hiển thị ở đây -->
-        loading-percentage
+        {{loadingPercent}}%
       </div>
-      <!-- <button class="begin-button">Bắt đầu</button> -->
-      <CmButton
-        propName="Bắt đầu"
-        variant="primary"
-        class="begin-button"
-        @click="handleClick"
-      />
+    <CmButton class="begin-button" label="Bắt đầu" @click="handleClick" />
+
     </div>
+    <!-- Dùng slot để thêm nội dung tuỳ chỉnh -->
   </div>
 </template>
 
 <script>
-import CmButton from "./CmButton.vue";
+import CmButton from './CmButton.vue';
 
 export default {
-  name: "CmCard",
+  name: "LearningContent",
   components: {
-    CmButton,
-  },
+    CmButton
+},
+
   props: {
-    title: {
-      type: String,
-      default: "",
+    idCourse:{
+      type: Number,
+      required: true
     },
-    content: {
+    courseName: {
       type: String,
-      default: "",
+      required: true,
     },
-  },
-  data() {
-    return {
-      key: 1,
-    };
-  },
-  watch: {
-    "props.content": function (newValue, oldValue) {},
-    key(newValue, oldValue) {},
-  },
-  methods: {
-    handleClick() {
-      console.log("submit");
+    contentName: {
+      type: String,
+      required: true,
+    },
+    loadingPercent: {
+      type: Number,
+      required: true,
     },
   },
 };
 </script>
 
 <style scoped>
-.cm-card {
-  width: 100%;
-  background-color: #ffffff;
-  border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+.card[data-v-462b507e] {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 500px;
+  margin: 10px 0;
+}
+.title {
+  height: 120px;
+}
+
+.content-name {
+  color: #475569;
+  /* Darker shade for content name */
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.course-name {
+  color: #1d4ed8;
+  /* Blue for course name */
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.confirm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.loading-percentage {
+  display: flex;
+  align-items: center;
+}
+
+.loading-percentage::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #22c55e;
+  /* Green dot for loading */
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.loading-percentage {
+  font-size: 14px;
+  color: #475569;
+  /* Gray text for percentage */
+}
+
+button.begin-button {
+  background-color: #1d4ed8;
+  /* Blue button background */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button.begin-button:hover {
+  background-color: #1e40af;
+  /* Darker blue on hover */
+}
+
+.right-card .begin-button {
+  background-color: #0ea5e9;
+  /* Lighter blue for the right card */
+}
+
+.right-card .begin-button:hover {
+  background-color: #0284c7;
+  /* Darker shade for hover */
 }
 </style>

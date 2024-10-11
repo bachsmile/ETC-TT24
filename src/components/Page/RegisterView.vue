@@ -1,12 +1,12 @@
 <template>
   <div class="cls-container">
     <div class="cls-logo-container">
-      <img src="../views/img/Untitled.png" alt="CLS Logo" class="cls-logo" />
+      <img src="../../views/img/Untitled.png" alt="CLS Logo" class="cls-logo" />
       <h1>Cloud Learning System</h1>
     </div>
     <div class="registration-form">
       <div class="form-header">
-        <img src="../views/img/Untitled.png" alt="CLS Icon" class="cls-icon" />
+        <img src="../../views/img/Untitled.png" alt="CLS Icon" class="cls-icon" />
         <h5 class="bold-text">Đăng ký</h5>
         <p>Nhanh chóng và dễ dàng</p>
       </div>

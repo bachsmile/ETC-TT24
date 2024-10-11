@@ -1,35 +1,34 @@
 <template>
-  <div>
-    <b-button
-      :variant="variant"
-      @click="onClick"
-    >
-      {{ propName }}
-    </b-button>
-  </div>
+  <button class="custom-button" @click="onClick">{{ label }}</button>
 </template>
 
 <script>
-  export default {
-    name: "CmButton",
-    props: {
-      propName: {
-        type: [String, Number],
-        default: 'Button'
-      },
-      variant: {
-        type: String,
-        default: 'primary'
-      },
+export default {
+  props: {
+    label: {
+      type: String,
+      required: true,
     },
-    methods: {
-      onClick(e) {
-        this.$emit('click', e)
-      }
+  },
+  methods: {
+    onClick() {
+      this.$emit('click');
     },
-  }
+  },
+};
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.custom-button {
+  padding: 10px 20px;
+  background-color: #0077fe;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
+.custom-button:hover {
+  background-color: #0022ff;
+}
 </style>

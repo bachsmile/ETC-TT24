@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import ProductDetail from '../views/product/ProductDetail.vue'
-import learningContent from '../components/learningContent.vue'
-import RegisterView from '../components/RegisterView.vue'
-import LoginView from '@/components/LoginView.vue'
-import learningComponent from '@/components/learningComponent.vue'
+import learningContent from '../components/LearningPage.vue'
+import RegisterView from '../components/Page/RegisterView.vue'
+import LoginView from '@/components/Page/LoginView.vue'
+import LeftContent from '@/components/Page/learningContent.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -58,9 +58,9 @@ const routes = [
   },
   
   {
-    path: '/App',
-    name:'App',
-    component: learningComponent
+    path: '/Left',
+    name:'Left',
+    component: LeftContent
   }
 
 ]

@@ -4,7 +4,7 @@
     <div class="left">
       <div class="left-content">
         <div class="logo">
-          <img src="../views/img/Untitled.png" alt="logo_CLS" />
+          <img src="../../views/img/Untitled.png" alt="logo_CLS" />
         </div>
       </div>
       <div class="application">
@@ -358,7 +358,7 @@
             </div>
           </div>
           <div class="avatar">
-            <img src="../views/img/Untitled.png" alt="" />
+            <img src="../../views/img/Untitled.png" alt="" />
           </div>
         </div>
       </div>
@@ -377,26 +377,26 @@
             </select>
           </div>
           <!-- <label for="from-date">Từ ngày</label>
-            <div class="date-picker-container">
-              <input type="text" id="from-date" placeholder="DD/MM/YYYY" />
-              <span class="date-icon"
-                ><svg
-                  width="18"
-                  height="20"
-                  viewBox="0 0 18 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M5.66675 0.833374C6.12699 0.833374 6.50008 1.20647 6.50008 1.66671V2.50004H11.5001V1.66671C11.5001 1.20647 11.8732 0.833374 12.3334 0.833374C12.7937 0.833374 13.1667 1.20647 13.1667 1.66671V2.50004H14.8334C16.2141 2.50004 17.3334 3.61933 17.3334 5.00004V16.6667C17.3334 18.0474 16.2141 19.1667 14.8334 19.1667H3.16675C1.78604 19.1667 0.666748 18.0474 0.666748 16.6667V5.00004C0.666748 3.61933 1.78604 2.50004 3.16675 2.50004H4.83341V1.66671C4.83341 1.20647 5.20651 0.833374 5.66675 0.833374ZM4.83341 4.16671H3.16675C2.70651 4.16671 2.33341 4.5398 2.33341 5.00004V7.50004H15.6667V5.00004C15.6667 4.5398 15.2937 4.16671 14.8334 4.16671H13.1667V5.00004C13.1667 5.46028 12.7937 5.83337 12.3334 5.83337C11.8732 5.83337 11.5001 5.46028 11.5001 5.00004V4.16671H6.50008V5.00004C6.50008 5.46028 6.12699 5.83337 5.66675 5.83337C5.20651 5.83337 4.83341 5.46028 4.83341 5.00004V4.16671ZM15.6667 9.16671H2.33341V16.6667C2.33341 17.1269 2.70651 17.5 3.16675 17.5H14.8334C15.2937 17.5 15.6667 17.1269 15.6667 16.6667V9.16671Z"
-                    fill="#344054"
-                  />
-                </svg>
-              </span>
-              <input type="date" id="from-date-hidden" style="display: none" />
-            </div> -->
+              <div class="date-picker-container">
+                <input type="text" id="from-date" placeholder="DD/MM/YYYY" />
+                <span class="date-icon"
+                  ><svg
+                    width="18"
+                    height="20"
+                    viewBox="0 0 18 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M5.66675 0.833374C6.12699 0.833374 6.50008 1.20647 6.50008 1.66671V2.50004H11.5001V1.66671C11.5001 1.20647 11.8732 0.833374 12.3334 0.833374C12.7937 0.833374 13.1667 1.20647 13.1667 1.66671V2.50004H14.8334C16.2141 2.50004 17.3334 3.61933 17.3334 5.00004V16.6667C17.3334 18.0474 16.2141 19.1667 14.8334 19.1667H3.16675C1.78604 19.1667 0.666748 18.0474 0.666748 16.6667V5.00004C0.666748 3.61933 1.78604 2.50004 3.16675 2.50004H4.83341V1.66671C4.83341 1.20647 5.20651 0.833374 5.66675 0.833374ZM4.83341 4.16671H3.16675C2.70651 4.16671 2.33341 4.5398 2.33341 5.00004V7.50004H15.6667V5.00004C15.6667 4.5398 15.2937 4.16671 14.8334 4.16671H13.1667V5.00004C13.1667 5.46028 12.7937 5.83337 12.3334 5.83337C11.8732 5.83337 11.5001 5.46028 11.5001 5.00004V4.16671H6.50008V5.00004C6.50008 5.46028 6.12699 5.83337 5.66675 5.83337C5.20651 5.83337 4.83341 5.46028 4.83341 5.00004V4.16671ZM15.6667 9.16671H2.33341V16.6667C2.33341 17.1269 2.70651 17.5 3.16675 17.5H14.8334C15.2937 17.5 15.6667 17.1269 15.6667 16.6667V9.16671Z"
+                      fill="#344054"
+                    />
+                  </svg>
+                </span>
+                <input type="date" id="from-date-hidden" style="display: none" />
+              </div> -->
           <CmCelendar propName="Từ Ngày" />
           <CmCelendar propName="Đến Ngày" />
         </div>
@@ -461,7 +461,7 @@
                   <!-- Nếu có loading percentage, có thể hiển thị ở đây -->
                   loading-percentage
                 </div>
-                <button class="begin-button">Bắt đầu</button>
+                <CmButton label="Bắt đầu" @click="handleClick" />
               </div>
             </div>
           </div>
@@ -482,10 +482,9 @@
               </div>
               <div class="confirm">
                 <div class="loading-percentage">
-                  <!-- Nếu có loading percentage, có thể hiển thị ở đây -->
                   loading-percentage
                 </div>
-                <button class="begin-button">Bắt đầu</button>
+                <CmButton label="Bắt đầu" @click="handleClick" />
               </div>
             </div>
           </div>
@@ -521,6 +520,9 @@
           <div class="number-around">
             <div class="number" @click="changePage(2)">2</div>
           </div>
+          <div class="number-around">
+            <div class="number" @click="changePage(3)">3</div>
+          </div>
         </div>
         <div class="button-right" @click="nextPage">
           <button>
@@ -550,11 +552,13 @@
 <script>
 import axiosIns from "@/plugins/Axios";
 import CmCelendar from "@/components/common/CmCelendar.vue"; // Adjust the path according to your folder structure
+import CmButton from "../common/CmButton.vue";
 
 export default {
   name: "LearningContent",
   components: {
     CmCelendar, // Register the imported component here
+    CmButton,
   },
   data() {
     return {
@@ -565,7 +569,6 @@ export default {
   async created() {
     await this.cource(); // Fetch the courses when component is created
   },
-
   methods: {
     async cource() {
       try {
