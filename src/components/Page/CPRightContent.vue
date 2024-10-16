@@ -8,8 +8,12 @@
       <p class="p-name-content">Nội dung đang học</p>
     </div>
     <!-- container -->
-    <CmContainer />
-
+    <CmSort />
+    <CmButton label="Thêm khóa học" @click="handleCreate" />
+    <CmCreateLearningCourse
+      v-if="createOn"
+      @close="createOn = false"
+    />
     <!-- khóa học chính  -->
     <div class="main-content">
       <div class="left-card">
@@ -44,28 +48,33 @@
       </div>
     </div>
     <!-- trang footer phân trang -->
-    <CmPagination />
+    <CmPagination @updatePageNumber="updatePageNumber" />
   </div>
 </template>
 <script>
-import CmCard from "./CmCard.vue";
-import CmPagination from "./CmPagination.vue";
-import CmHeader from "./CmHeader.vue";
-import CmContainer from "./Container.vue";
+import CmCard from "../common/CmCard.vue";
+import CmPagination from "../common/CmPagination.vue";
+import CmHeader from "../common/CmHeader.vue";
+import CmSort from "../common/CmSort.vue";
 import axiosIns from "@/plugins/Axios";
+import CmButton from "../common/CmButton.vue";
+import CmCreateLearningCourse from "../common/CmCreateLearningCourse.vue";
 
 export default {
   name: "CmRightContent",
   components: {
     CmHeader,
-    CmContainer,
+    CmSort,
     CmCard,
     CmPagination,
+    CmButton,
+    CmCreateLearningCourse,
   },
   data() {
     return {
       courseList: [],
       pageNumber: 1,
+      createOn: false,
     };
   },
   async created() {
@@ -85,6 +94,14 @@ export default {
       }
       // Go to the previous page
     },
+    updatePageNumber(newPageNumber) {
+    this.pageNumber = newPageNumber;
+    this.cource();  // Fetch courses based on the new page number
+    },
+    handleCreate(){
+      this.createOn = true;
+      // console.log("handleClick");
+    }
   },
 };
 </script>
@@ -103,7 +120,9 @@ export default {
   justify-content: center;
   margin-top: 20px;
 }
-
+.button-add{
+  margin-top: 10px;
+}
 .left-card {
   float: left;
   margin: 1px;

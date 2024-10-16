@@ -4,7 +4,6 @@ import HomeView from '../views/HomeView.vue'
 import learningContent from '../components/LearningPage.vue'
 import RegisterView from '../components/Page/RegisterView.vue'
 import LoginView from '@/components/Page/LoginView.vue'
-import LeftContent from '@/components/Page/learningContent.vue'
 
 Vue.use(VueRouter)
 
@@ -56,12 +55,6 @@ const routes = [
     name:'LoginForm',
     component: LoginView
   },
-  
-  {
-    path: '/Left',
-    name:'Left',
-    component: LeftContent
-  }
 
 ]
 

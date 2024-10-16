@@ -33,8 +33,8 @@
         <div class="number" @click="changePage(3)">3</div>
       </div>
     </div>
-    <div class="button-right" @click="nextPage">
-      <button>
+    <div class="button-right" >
+      <button @click="nextPage">
         <div class="behind-button">
           <svg
             width="14"
@@ -66,22 +66,22 @@ export default {
         pageNumber: 1,
         }
     },
-    prevPage() {
-      if (this.pageNumber > 1) {
-        this.pageNumber -= 1;
-        this.cource();
-      }
-    },
-    // Go to the next page
-    nextPage() {
-      this.pageNumber += 1;
-      this.cource();
-    },
-    // Change to specific page
-    changePage(page) {
-      this.pageNumber = page;
-      this.cource();
-    },
+    methods: {
+  prevPage() {
+    if (this.pageNumber > 1) {
+      this.pageNumber -= 1;
+      this.$emit('updatePageNumber', this.pageNumber);
+    }
+  },
+  nextPage() {
+    this.pageNumber += 1;
+    this.$emit('updatePageNumber', this.pageNumber);
+  },
+  changePage(page) {
+    this.pageNumber = page;
+    this.$emit('updatePageNumber', this.pageNumber);
+  },
+}
 
 };
 </script>

@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import Logo from "./CmLogo.vue";
+import Logo from "../common/CmLogo.vue";
 
 export default {
   name: "Left",

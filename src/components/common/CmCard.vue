@@ -1,32 +1,40 @@
-<!-- Card.vue -->
 <template>
   <div class="card">
     <div class="title">
-      <p class="course-name">{{idCourse}} {{courseName}}</p>
-      <p class="content-name">{{contentName}}</p>
+      <p class="course-name">{{ idCourse }} {{ courseName }}</p>
+      <p class="content-name">{{ contentName }}</p>
     </div>
     <div class="confirm">
       <div class="loading-percentage">
-        {{loadingPercent}}%
+        {{ loadingPercent }}%
       </div>
-    <CmButton class="begin-button" label="Bắt đầu" @click="handleClick" />
-
+      <CmButton class="begin-button" label="Bắt đầu" @click="handleClick" />
+      <CmButton class="delete-button" label="Xóa Thẻ" @click="handleDelete" />
+      <CmButton class="update-button" label="Chỉnh Sửa" @click="handleEdit" />
     </div>
-    <!-- Dùng slot để thêm nội dung tuỳ chỉnh -->
+
+    <!-- Hiển thị component cập nhật khi editMode là true -->
+    <CmUpdate 
+      v-if="editMode" 
+      @close="editMode = false" 
+    />
+     <!-- Gọi phương thức updateCourse khi có sự kiện update -->
   </div>
 </template>
 
 <script>
 import CmButton from './CmButton.vue';
+import CmUpdate from '../common/CmUpdateLearningCourse.vue';
+import axios from 'axios'; 
 
 export default {
-  name: "LearningContent",
+  name: "CmCard",
   components: {
-    CmButton
-},
-
+    CmButton,
+    CmUpdate 
+  },
   props: {
-    idCourse:{
+    idCourse: {
       type: Number,
       required: true
     },
@@ -43,9 +51,41 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      editMode: false, 
+      courseById: [],
+    };
+  },
+  
+  methods: {
+    
+    async handleDelete() {
+      
+        try {
+          const response = await axios.delete(`https://localhost:7066/LearningCourse/${this.idCourse}`, {
+            data: { id: this.idCourse }
+          });
+          console.log('Xóa thành công:', response.data);
+          
+          window.location.href = 'http://localhost:8080/learning';
+        } catch (error) {
+          console.error('Có lỗi xảy ra khi xóa:', error);
+          alert('Có lỗi xảy ra khi xóa khóa học.');
+        }
+    
+    },
+    handleClick() {
+      console.log("handleClick");
+      
+    },
+    async handleEdit() {
+      this.editMode = true; 
+    },
+    
+  }
 };
 </script>
-
 <style scoped>
 
 .card[data-v-462b507e] {
@@ -128,4 +168,36 @@ button.begin-button:hover {
   background-color: #0284c7;
   /* Darker shade for hover */
 }
+button.delete-button {
+  background-color: #e62929;
+  /* Blue button background */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button.delete-button:hover {
+  background-color: #ff5100;
+  /* Darker blue on hover */
+}
+
+button.update-button {
+  background-color: #ffe70e;
+  /* Blue button background */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button.update-button:hover {
+  background-color: #00d9ff;
+  /* Darker blue on hover */
+}
+
 </style>

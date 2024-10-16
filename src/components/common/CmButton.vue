@@ -9,6 +9,10 @@ export default {
       type: String,
       required: true,
     },
+    id: {
+      type: Number,
+      default: null
+    }
   },
   methods: {
     onClick() {
@@ -21,7 +25,7 @@ export default {
 <style scoped>
 .custom-button {
   padding: 10px 20px;
-  background-color: #0077fe;
+  background-color: #4c9bf6;
   color: white;
   border: none;
   border-radius: 5px;
@@ -29,6 +33,6 @@ export default {
 }
 
 .custom-button:hover {
-  background-color: #0022ff;
+  background-color: #4ea5f7;
 }
 </style>

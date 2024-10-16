@@ -905,13 +905,13 @@ input[type="text"] {
   color: #000000;
 }
 
-.btn-hide svg {
+/* .btn-hide svg {
   position: absolute;
   font-size: 18px;
   transform: translateY(150%);
   color: #888;
   left: 28px;
-}
+} */
 
 input[type="date"] {
   display: none;

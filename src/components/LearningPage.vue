@@ -1,18 +1,18 @@
 <template>
   <div class="learning-content">
-    <CmLeftContent />
-    <CmRightContent />
+    <CPLeftContent />
+    <CPRightContent />
   </div>
 </template>
 <script>
-import CmLeftContent from "./common/CmLeftContent.vue";
-import CmRightContent from "./common/CmRightContent.vue";
+import CPLeftContent from "./Page/CPLeftContent.vue";
+import CPRightContent from "./Page/CPRightContent.vue";
 
 export default {
   name: "CmContainer",
   components: {
-    CmRightContent,
-    CmLeftContent,
+    CPRightContent,
+    CPLeftContent,
   },
 };
 </script>

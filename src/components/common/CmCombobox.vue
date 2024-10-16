@@ -8,22 +8,22 @@
       @change="emitSelection"
     >
       <option value="" disabled selected>Chọn khóa học</option>
-      <option v-for="course in courses" :key="course.LearningCourseId" :value="course.LearningCourseId">
-        {{ course.LearningCourseName }}
+      <option v-for="course in courseNameList" 
+        :key="course.LearningCourseId" 
+        :value="course.LearningCourseId">
+        {{ course.learningCourseId }} {{ course.learningCourseName }}
+
       </option>
     </select>
   </div>
 </template>
 
 <script>
+import axiosIns from "@/plugins/Axios";
 
 export default {
     name: "CmCombobox",
   props: {
-    courses: {
-      type: Array,
-      required: true,
-    },
     label: {
       type: String,
       default: "Null",
@@ -31,13 +31,26 @@ export default {
   },
   data() {
     return {
-      selectedCourse: "",
+      courseNameList: [],
     };
   },
+  async created() {
+    await this.courceName(); // Fetch the courses when component is created
+  },
   methods: {
-    emitSelection() {
-      this.$emit("courseSelected", this.selectedCourse);
-    },  
+    async courceName() {
+      try {
+        const res = await axiosIns.get(
+          `SelectCourse`
+        );
+        this.courseNameList = res.data;
+
+        console.log(this.courseNameList);
+      } catch (error) {
+        throw error;
+      }
+      // Go to the previous page
+    }
   },
 };
 </script>
