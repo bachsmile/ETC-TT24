@@ -1,44 +1,47 @@
 <template>
-  <div class="form">
-    <table>
-      <thead>
-        <tr>
-          <th>NAME</th>
-          <th>CREATE LEARNING COURSE</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Course Name</td>
-          <td><input type="text" v-model="nameCourse" /></td>
-        </tr>
-        <tr>
-          <td>Description</td>
-          <td><input type="text" v-model="description" /></td>
-        </tr>
-        <tr>
-          <td>Date Begin</td>
-          <td><input type="text" v-model="dateBegin" /></td>
-        </tr>
-        <tr>
-          <td>Date End</td>
-          <td><input type="text" v-model="dateEnd" /></td>
-        </tr>
-        <tr>
-          <td>learningCourseId</td>
-          <td><input type="text" v-model="learningCourseId" /></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="btn-cus">
-      <CmButton class="Create" label="Create" @click="Creates" />
-      <CmButton class="Cancel" label="Cancel" @click="cancelEdit" />
-    </div>
-    
+  <div>
+    <b-button v-b-modal.modal-1>Thêm Khóa Học</b-button>
+
+    <b-modal id="modal-1" title="BootstrapVue">
+      <table>
+        <thead>
+          <tr>
+            <th>NAME</th>
+            <th>CREATE LEARNING COURSE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Course Name</td>
+            <td><input type="text" v-model="nameCourse" /></td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td><input type="text" v-model="description" /></td>
+          </tr>
+          <tr>
+            <td>Date Begin</td>
+            <td><input type="text" v-model="dateBegin" /></td>
+          </tr>
+          <tr>
+            <td>Date End</td>
+            <td><input type="text" v-model="dateEnd" /></td>
+          </tr>
+          <tr>
+            <td>learningCourseId</td>
+            <td><input type="text" v-model="learningCourseId" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <template #modal-footer>
+        <b-button variant="ok" @click="ok">OK</b-button>
+      </template>
+    </b-modal>
   </div>
 </template>
 
 <script>
+import { BButton, BModal } from "bootstrap-vue";
 import CmButton from "./CmButton.vue";
 import axios from "axios";
 
@@ -46,6 +49,8 @@ export default {
   name: "CmCreateLearningCourse",
   components: {
     CmButton,
+    BModal,
+    BButton,
   },
   data() {
     return {
@@ -57,7 +62,7 @@ export default {
     };
   },
   methods: {
-    async Creates() {
+    async ok() {
       const courseCreateData = {
         nameCourse: this.nameCourse,
         description: this.description,
@@ -68,7 +73,8 @@ export default {
 
       try {
         const response = await axios.post(
-          `https://localhost:7066/LearningCourse`,courseCreateData
+          `https://localhost:7066/LearningCourse`,
+          courseCreateData
         );
         console.log("Update successful:", response.data);
         this.$emit("close"); // Close the form after successful update
@@ -90,15 +96,6 @@ body {
   background-color: #f4f7f6;
   margin: 0;
   padding: 20px;
-}
-
-.form {
-  max-width: 600px;
-  margin: 0 auto;
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 table {
@@ -171,11 +168,11 @@ input[type="date"]:focus {
   margin-top: 20px;
 }
 
-.Create {
-  margin-right: 12px;
+button.close {
+  border-radius: 6px;
 }
 
-.Cancel {
-  margin-right: 12px;
+.modal-header {
+  justify-content: space-between;
 }
 </style>

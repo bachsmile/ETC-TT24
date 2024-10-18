@@ -6,14 +6,10 @@
     <!-- content -->
     <div class="name-content">
       <p class="p-name-content">Nội dung đang học</p>
+      <CmCreateLearningCourse />
     </div>
     <!-- container -->
     <CmSort />
-    <CmButton label="Thêm khóa học" @click="handleCreate" />
-    <CmCreateLearningCourse
-      v-if="createOn"
-      @close="createOn = false"
-    />
     <!-- khóa học chính  -->
     <div class="main-content">
       <div class="left-card">
@@ -74,7 +70,6 @@ export default {
     return {
       courseList: [],
       pageNumber: 1,
-      createOn: false,
     };
   },
   async created() {
@@ -95,13 +90,13 @@ export default {
       // Go to the previous page
     },
     updatePageNumber(newPageNumber) {
-    this.pageNumber = newPageNumber;
-    this.cource();  // Fetch courses based on the new page number
+      this.pageNumber = newPageNumber;
+      this.cource(); // Fetch courses based on the new page number
     },
-    handleCreate(){
+    handleCreate() {
       this.createOn = true;
       // console.log("handleClick");
-    }
+    },
   },
 };
 </script>
@@ -120,7 +115,7 @@ export default {
   justify-content: center;
   margin-top: 20px;
 }
-.button-add{
+.button-add {
   margin-top: 10px;
 }
 .left-card {
@@ -130,6 +125,12 @@ export default {
 .right-card {
   float: right;
   margin: 1px;
+}
+
+.name-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
 }
 
 /* footer */

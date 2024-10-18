@@ -1,13 +1,16 @@
 <template>
   <!-- container -->
   <div class="filter">
-    <div v-if="isFilterVisible" class="filter-container">
-      <div class="on">
+    <div class="filter-container">
+      <!-- Chỉ ẩn thẻ div.on khi nhấn "Ẩn lọc" -->
+      <div v-if="isFilterVisible" class="on">
+        <!-- Các thành phần như combobox và calendar -->
         <CmCombobox label="Khóa học" :courses="courseNameList" />
         <CmCelendar propName="Từ Ngày" />
         <CmCelendar propName="Đến Ngày" />
       </div>
-      <!--search and hide-button  -->
+
+      <!-- search and hide-button  -->
       <div class="filter-search">
         <div class="search-box">
           <svg
@@ -35,16 +38,6 @@
         </div>
       </div>
     </div>
-    <div v-else>
-      <!-- Nút hiện khi filter-container đang ẩn -->
-      <div class="btn-on">
-        <CmButton
-          :label="isFilterVisible ? 'Ẩn lọc' : 'Hiện lọc'"
-          class="btnOn"
-          @click="toggleFilter"
-        />
-      </div>
-    </div>
   </div>
 </template>
 
@@ -62,13 +55,13 @@ export default {
   },
   data() {
     return {
-      isFilterVisible: true, // Biến để quản lý trạng thái ẩn/hiện
+      isFilterVisible: true, // Hiện filter mặc định
     };
   },
 
   methods: {
     toggleFilter() {
-      this.isFilterVisible = !this.isFilterVisible; // Thay đổi trạng thái khi nút được nhấn
+      this.isFilterVisible = !this.isFilterVisible; // Thay đổi trạng thái ẩn/hiện
     },
   },
 };

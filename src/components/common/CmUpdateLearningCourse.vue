@@ -52,28 +52,29 @@ export default {
   },
   data() {
     return {
-        id: "",
-        nameCourse: "",
-        description: "",
-        dateBegin: "",
-        dateEnd: "",
+      id: "",
+      nameCourse: "",
+      description: "",
+      dateBegin: "",
+      dateEnd: "",
     };
   },
   methods: {
     async saveChanges() {
-      const courseUpdateData ={
+      const courseUpdateData = {
         id: this.id,
-        nameCourse: this.nameCourse,    
-        description: this.description,
-        dateBegin: this.dateBegin,
-        dateEnd: this.dateEnd,
-        learningCourseId: this.learningCourseId
-      }
+        NameCourse: this.nameCourse,
+        Description: this.description,
+        DateBegin: this.dateBegin,
+        DateEnd: this.dateEnd,
+        LearningCourseId: this.learningCourseId,
+      };
       try {
         const response = await axios.put(
-          `https://localhost:7066/LearningCourse/${this.id}`,{
-            courseUpdateData
-        });
+          `https://localhost:7066/LearningCourse/${this.id}`,
+
+          courseUpdateData
+        );
         console.log("Update successful:", response.data);
         this.$emit("close"); // Close the form after successful update
         window.location.href = "http://localhost:8080/learning";
@@ -84,7 +85,6 @@ export default {
     cancelEdit() {
       this.$emit("close"); // Close the form without saving
     },
-    
   },
 };
 </script>
