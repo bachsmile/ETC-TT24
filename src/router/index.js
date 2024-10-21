@@ -5,6 +5,8 @@ import ProductDetail from '../views/product/ProductDetail.vue'
 import RegisterView from '../views/Course/RegisterView.vue'
 import SurveyView from '../views/Course/SurveyView.vue'
 import LoginView from '../views/Course/LoginView.vue'
+import ProfileView from '../views/Course/ProfileView.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -18,19 +20,34 @@ const routes = [
     name: 'register',
     component: RegisterView
   },
-
   {
     path: '/survey',
     name: 'survey',
     component: SurveyView,
-    meta: { requiresAuth: true }
+    meta: { requiresAuth: true },
+    props: (route) => ({ 
+      tab: route.query.tab,
+      page: Number(route.query.page) || 1 
+    }),
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: ProfileView,
+    beforeEnter: (to, from, next) => {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        next('/login'); 
+      } else {
+        next(); 
+      }
+    },
   },
   {
     path: '/login',
     name: 'login',
     component: LoginView
   },
-
   {
     path: '/product',
     name: 'product',
@@ -56,7 +73,6 @@ const routes = [
       }
     ]
   },
-
 ]
 
 const router = new VueRouter({
@@ -64,12 +80,9 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
 router.beforeEach((to, from, next) => {
-  // Ví dụ về một navigation guard an toàn
   console.log(`Navigating from ${from.path} to ${to.path}`);
-  next(); // Luôn cho phép chuyển hướng
-})
-router.beforeEach((to, from, next) => {
   const loggedIn = isLoggedIn();
 
   if (to.matched.some(record => record.meta.requiresAuth) && !loggedIn) {
@@ -85,6 +98,5 @@ function isLoggedIn() {
   const token = localStorage.getItem("token");
   return !!token;
 }
-
 
 export default router
