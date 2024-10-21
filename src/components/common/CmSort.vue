@@ -5,7 +5,7 @@
       <!-- Chỉ ẩn thẻ div.on khi nhấn "Ẩn lọc" -->
       <div v-if="isFilterVisible" class="on">
         <!-- Các thành phần như combobox và calendar -->
-        <CmCombobox label="Khóa học" :courses="courseNameList" />
+        <CmCombobox label="Khóa học" />
         <CmCelendar propName="Từ Ngày" />
         <CmCelendar propName="Đến Ngày" />
       </div>

@@ -1,18 +1,14 @@
 <template>
   <div class="filter-group">
     <label for="course">{{ label }}</label>
-    <select
-      id="course"
-      name="course"
-      v-model="selectedCourse"
-      @change="emitSelection"
-    >
+    <select id="course" name="course" v-model="selectedCourse">
       <option value="" disabled selected>Chọn khóa học</option>
-      <option v-for="course in courseNameList" 
-        :key="course.LearningCourseId" 
-        :value="course.LearningCourseId">
+      <option
+        v-for="course in courseNameList"
+        :key="course.LearningCourseId"
+        :value="course.LearningCourseId"
+      >
         {{ course.learningCourseId }} {{ course.learningCourseName }}
-
       </option>
     </select>
   </div>
@@ -22,7 +18,7 @@
 import axiosIns from "@/plugins/Axios";
 
 export default {
-    name: "CmCombobox",
+  name: "CmCombobox",
   props: {
     label: {
       type: String,
@@ -32,6 +28,7 @@ export default {
   data() {
     return {
       courseNameList: [],
+      selectedCourse: "",
     };
   },
   async created() {
@@ -40,9 +37,7 @@ export default {
   methods: {
     async courceName() {
       try {
-        const res = await axiosIns.get(
-          `SelectCourse`
-        );
+        const res = await axiosIns.get(`SelectCourse`);
         this.courseNameList = res.data;
 
         console.log(this.courseNameList);
@@ -50,13 +45,12 @@ export default {
         throw error;
       }
       // Go to the previous page
-    }
+    },
   },
 };
 </script>
 
 <style scoped>
-
 .filter-group {
   flex-direction: column;
   gap: 5px;

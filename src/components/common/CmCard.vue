@@ -42,7 +42,7 @@ export default {
       required: true,
     },
     loadingPercent: {
-      type: Number,
+      type: String,
       required: true,
     },
   },
